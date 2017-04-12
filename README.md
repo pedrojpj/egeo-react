@@ -2,9 +2,9 @@
 <img src="https://github.com/Stratio/egeo-web/blob/master/src/assets/images/egeo_logo_c.png">
 </div>
 
-# Egeo
+# Egeo React
 
-EGEO is the open-source component library used to build Stratio's UI. The goals are to reduce the time and complexity of interface building being more productive, improving the experience based in apply the same patterns and visuals across the whole Stratio applications being more consistent, and create a common and unified visual language that helps us to understand each other better laying the foundation for scalable growth.
+EGEO React is the open-source component library used to build Stratio's UI. The goals are to reduce the time and complexity of interface building being more productive, improving the experience based in apply the same patterns and visuals across the whole Stratio applications being more consistent, and create a common and unified visual language that helps us to understand each other better laying the foundation for scalable growth.
 
 This is a free adaptation in React of the original library in Angular:
 
