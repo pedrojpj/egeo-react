@@ -1,0 +1,64 @@
+@import '~@stratio/egeo-ui-base/utils/typography';
+@import '~@stratio/egeo-ui-base/utils/colors';
+
+$this: 'st-button';
+
+$st-button---height: 35px !default;
+
+%rect-button {
+   min-width: 150px;
+   padding: 3px 20px 0;
+}
+
+%round-button {
+   align-items: center;
+   border-radius: 100%;
+   display: inline-flex;
+   justify-content: center;
+   min-width: 0;
+   outline: none;
+   padding: 7px 1px;
+   width: $st-button---height;
+
+   .#{$this}__text {
+      display: none;
+   }
+}
+
+.#{$this} {
+   box-sizing: border-box;
+   cursor: pointer;
+   height: $st-button---height;
+   outline: none;
+
+   &__icon + &__text,
+   &__text + &__icon {
+      margin: 0 0 0 4px;
+   }
+
+   &[disabled] {
+      cursor: auto;
+   }
+
+   &--btnMain {
+      @extend %rect-button;
+   }
+
+   &--btnLink {
+      @extend %rect-button;
+
+      .#{$this}__icon + .#{$this}__text,
+      .#{$this}__text + .#{$this}__icon {
+         margin: 0 0 0 2px;
+      }
+   }
+
+   &--btnTool {
+      @extend %round-button;
+
+      .#{$this}__icon + .#{$this}__text,
+      .#{$this}__text + .#{$this}__icon {
+         margin: 0;
+      }
+   }
+}
