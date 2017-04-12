@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import { StButton, StFooter, StSpinner, StInfoBox, StInfoCard } from 'egeo-react';
+import { StButton, StFooter, StSpinner, StInfoBox, StInfoCard } from './Egeo';
 
 class App extends Component {
 
@@ -27,7 +27,7 @@ class App extends Component {
         <div className="App-header">
 
         </div>
-        <p className="App-intro">
+        <div className="App-intro">
           <StButton leftIcon="icon-circle-check" type="button">Button</StButton>
 
           <br />
@@ -44,7 +44,7 @@ class App extends Component {
             <p>You can put any content here</p>
           </StInfoCard>
 
-        </p>
+        </div>
         <StFooter links={this.state.links} image="http://www.stratio.com/wp-content/uploads/2017/01/logo-stratio-white.png" rightsText="prueba" />
       </div>
     );

@@ -5,7 +5,7 @@ class StSpinner extends Component {
 
   render() {
     return (
-      <div class="st-spinner">
+      <div className="st-spinner">
         {this.props.loading ? <img src={this.props.imageUrl} alt="loading" /> : false}
       </div>
     )
