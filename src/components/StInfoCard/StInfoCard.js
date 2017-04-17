@@ -11,7 +11,7 @@ class StInfoCard extends Component {
         {this.props.image ?
 
           <div className="st-info-card__photo-div">
-            <img className="st-info-card__photo img-responsive" src={this.props.image} />
+            <img className="st-info-card__photo img-responsive" src={this.props.image} alt="" />
           </div>
 
           : false
