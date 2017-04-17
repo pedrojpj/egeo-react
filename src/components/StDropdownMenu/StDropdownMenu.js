@@ -25,7 +25,6 @@ class StDropdownMenu extends Component {
           ? <div className="sth-dropdown-menu dropdown-menu">
 
               <ul aria-hidden={!this.props.active} aria-label="submenu">
-
                 {this.props.items.map(item => {
                   return <StDropdownMenuItem item={item} />;
                 })}
