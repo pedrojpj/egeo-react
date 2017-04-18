@@ -23,3 +23,12 @@ storiesOf('StPagination', module)
     'with total less than 200 and showPerPage option enabled',
     () => <StPagination total={50} showPerPage />
   )
+  .addWithInfo(
+    'change currentPage',
+    () => <StPagination currentPage={3} total={200} />
+  )
+  .addWithInfo(
+    'change perPageOptions',
+    () => <StPagination perPageOptions={[5, 10, 20]} perPage={5} total={200} />
+  )
+

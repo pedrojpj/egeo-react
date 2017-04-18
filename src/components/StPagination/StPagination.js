@@ -15,7 +15,7 @@ class StPagination extends Component {
       lastItem: 1,
       disablePrevButton: false,
       disableNextButton: false,
-      currentPage: 1,
+      currentPage: props.currentPage,
       perPage: props.perPage,
       items: []
     }
