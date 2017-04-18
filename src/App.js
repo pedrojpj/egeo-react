@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react'
+import './App.css'
 
 import {
   StButton,
@@ -8,37 +8,38 @@ import {
   StInfoBox,
   StInfoCard,
   StPagination,
-  StDropdownMenu
-} from "./Egeo";
+  StDropdownMenu,
+  StDropdown
+} from './Egeo'
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       links: [
         {
-          title: "Home"
+          title: 'Home'
         },
         {
-          title: "Contact"
+          title: 'Contact'
         }
       ],
       items: [
         {
-          label: "Critical Error",
+          label: 'Critical Error',
           value: 1
         },
         {
-          label: "Warning",
+          label: 'Warning',
           value: 2
         },
         {
-          label: "Lorem Ipsum",
+          label: 'Lorem Ipsum',
           value: 3
         }
       ]
-    };
+    }
   }
 
   render() {
@@ -76,6 +77,12 @@ class App extends Component {
 
           <StDropdownMenu active items={this.state.items} />
 
+          <br />
+
+          <div className="dropdown">
+            <StDropdown items={this.state.items} button="Select one item" />
+          </div>
+
         </div>
         <StFooter
           links={this.state.links}
@@ -83,8 +90,8 @@ class App extends Component {
           rightsText="prueba"
         />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
