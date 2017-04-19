@@ -47,6 +47,8 @@ class StDropdown extends Component {
 
     if (!this.props.default) {
       value = item.label
+    } else {
+      value = this.props.button
     }
 
     this.setState({
@@ -84,11 +86,15 @@ class StDropdown extends Component {
       minWidth: this.state.widthMenu + 'px'
     }
 
+    const stylesButton = {
+      width: this.props.width + 'px'
+    }
+
     return (
       <div className="sth-dropdown-container">
         <button
           tabIndex="0"
-          width={this.props.width + 'px'}
+          style={stylesButton}
           aria-expanded={this.state.isActive}
           id={this.props.qaTag + 'button'}
           aria-haspopup="true"
