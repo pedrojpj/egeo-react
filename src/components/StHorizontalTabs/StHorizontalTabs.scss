@@ -1,0 +1,60 @@
+.st-horizontal-tabs {
+   margin: 10px 0 30px;
+   overflow: hidden;
+   width: 100%
+}
+
+.st-horizontal-tabs__list {
+   list-style: none;
+}
+
+.st-horizontal-tabs__option {
+   display: inline-block;
+   width: 150px;
+   height: 35px;
+   line-height: 33px;
+   box-sizing: border-box;
+   margin-bottom: -5px;
+}
+
+.st-horizontal-tabs__option__text {
+   margin-top: 2px;
+   margin-left: 15px;
+   cursor: pointer;
+}
+
+@import '~@stratio/egeo-ui-base/utils/typography';
+@import '~@stratio/egeo-ui-base/utils/colors';
+
+.sth-horizontal-tabs__option--disabled {
+   opacity: .5;
+}
+
+.sth-horizontal-tabs__option--disabled>a {
+   cursor: default;
+}
+
+.sth-horizontal-tabs__option:hover:not(.sth-horizontal-tabs__option--disabled)>a {
+   color: egeo-get-color(n10);
+}
+
+.sth-horizontal-tabs__list {
+   border-bottom: 1.6px solid egeo-get-color(n3);
+}
+
+.sth-horizontal-tabs__option__text {
+   color: egep-get-color(n6);
+   text-decoration: none;
+   font-family: egeo-get-font(heading);
+   font-size: 15px;
+   text-transform: uppercase;
+}
+
+.sth-horizontal-tabs__option--active {
+   background-color: egeo-get-color(n0);
+   border: 1.6px solid egeo-get-color(n3);
+   border-bottom-color: egeo-get-color(n0);
+   >.sth-horizontal-tabs__option__text {
+      color: egeo-get-color(n10) !important;
+   }
+}
