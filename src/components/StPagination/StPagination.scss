@@ -1,0 +1,26 @@
+.pagination {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding: 20px 5px;
+
+   .selector {
+      margin-right: auto;
+   }
+
+   .navigator {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+
+      p {
+         margin: 0;
+         padding: 0 15px;
+      }
+   }
+
+   .st-button:first-child {
+      margin: 0 5px;
+   }
+
+}
