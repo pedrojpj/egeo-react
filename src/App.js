@@ -9,7 +9,8 @@ import {
   StInfoCard,
   StPagination,
   StDropdownMenu,
-  StDropdown
+  StDropdown,
+  StHorizontalTabs
 } from './Egeo'
 
 class App extends Component {
@@ -71,7 +72,7 @@ class App extends Component {
 
           <br />
 
-          <StPagination total="200" />
+          <StPagination total={200} />
 
           <br />
 
@@ -82,6 +83,10 @@ class App extends Component {
           <div className="dropdown">
             <StDropdown items={this.state.items} button="Select one item" />
           </div>
+
+          <br />
+
+          <StHorizontalTabs options={[{ text: 'Tab1' }, { text: 'Tab2' }]} />
 
         </div>
         <StFooter
