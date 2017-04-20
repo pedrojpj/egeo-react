@@ -1,0 +1,34 @@
+$padding: 10px;
+
+.st-page-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+}
+
+.button-box {
+  padding-right: $padding;
+  padding-bottom: $padding - 2;
+  margin-right: $padding;
+  display: inline-block;
+}
+
+.main-title {
+  flex-grow: 1;
+  white-space: nowrap;
+  line-height: 25px;
+  padding-bottom: $padding;
+  vertical-align: bottom;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+
+  h3, h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 100%;
+  }
+}

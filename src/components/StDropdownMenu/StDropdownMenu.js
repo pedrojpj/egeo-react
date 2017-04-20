@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { string, number, arrayOf, bool, func, shape, node } from 'prop-types'
+import React, { Component } from 'react';
+import { string, arrayOf, bool, func, shape, node } from 'prop-types';
 
-import './StDropdownMenu.scss'
+import './StDropdownMenu.scss';
 
 const StDropdownMenuItem = props => (
   <li
@@ -13,15 +13,11 @@ const StDropdownMenuItem = props => (
     {props.item.icon ? <i className={props.item.icon} /> : false}
     {props.item.label}
   </li>
-)
+);
 
 class StDropdownMenu extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   selectItem(item) {
-    this.props.onChange(item)
+    this.props.onChange(item);
   }
 
   render() {
@@ -38,14 +34,14 @@ class StDropdownMenu extends Component {
                       key={i}
                       onClick={() => this.selectItem(item)}
                     />
-                  )
+                  );
                 })}
               </ul>
 
             </div>
           : false}
       </div>
-    )
+    );
   }
 }
 
@@ -60,11 +56,11 @@ StDropdownMenu.propTypes = {
     })
   ),
   onChange: func
-}
+};
 
 StDropdownMenu.defaultProps = {
   items: [],
   onChange: () => {}
-}
+};
 
-export default StDropdownMenu
+export default StDropdownMenu;
