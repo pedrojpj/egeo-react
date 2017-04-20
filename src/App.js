@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './App.css'
+import React, { Component } from 'react';
+import './App.css';
 
 import {
   StButton,
@@ -10,12 +10,13 @@ import {
   StPagination,
   StDropdownMenu,
   StDropdown,
-  StHorizontalTabs
-} from './Egeo'
+  StHorizontalTabs,
+  StPageTitle
+} from './Egeo';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       links: [
@@ -40,7 +41,7 @@ class App extends Component {
           value: 3
         }
       ]
-    }
+    };
   }
 
   render() {
@@ -88,6 +89,16 @@ class App extends Component {
 
           <StHorizontalTabs options={[{ text: 'Tab1' }, { text: 'Tab2' }]} />
 
+          <br /><br />
+
+          <StPageTitle
+            title="Page Title"
+            leftButton="icon-reply"
+            preTitle="Title without left button:"
+          />
+
+          <br /><br />
+
         </div>
         <StFooter
           links={this.state.links}
@@ -95,8 +106,8 @@ class App extends Component {
           rightsText="prueba"
         />
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
