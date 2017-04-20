@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { arrayOf, bool, shape, string, func } from 'prop-types'
+import { arrayOf, bool, shape, string, func, isRequired } from 'prop-types'
 import classNames from 'classnames'
 
 import './StHorizontalTabs.scss'
@@ -37,7 +37,8 @@ class StHorizontalTabs extends Component {
   }
 
   componentWillMount() {
-    if (!this.props.active) this.activeOption(this.props.options[0])
+    if (!this.props.active && this.props.options.length)
+      this.activeOption(this.props.options[0])
   }
 
   activeOption(option) {
@@ -92,7 +93,7 @@ StHorizontalTabs.propTypes = {
     shape({
       text: string,
       isDisabled: bool
-    })
+    }).isRequired
   ),
   qaTag: string,
   active: string,
