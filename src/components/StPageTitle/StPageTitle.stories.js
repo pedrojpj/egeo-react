@@ -1,18 +1,18 @@
-import React from 'react';
-import { storiesOf, action, linkTo } from '@kadira/storybook';
+import React from 'react'
+import { storiesOf, action, linkTo } from '@kadira/storybook'
 
-import { StPageTitle } from 'egeo-react';
+import { StPageTitle, StSearch } from 'egeo-react'
 
 storiesOf('StPageTitle', module).addWithInfo('default with title', () => (
   <StPageTitle title="Page Title" />
-));
+))
 
 storiesOf(
   'StPageTitle',
   module
 ).addWithInfo('default with title and pretitle', () => (
   <StPageTitle title="Egeo" preTitle="Project:" />
-));
+))
 
 storiesOf(
   'StPageTitle',
@@ -24,4 +24,15 @@ storiesOf(
     leftButton="icon-reply"
     onClickButton={action('click button')}
   />
-));
+))
+
+storiesOf('StPageTitle', module).addWithInfo('with right content', () => (
+  <StPageTitle
+    title="Egeo"
+    preTitle="Project:"
+    leftButton="icon-reply"
+    onClickButton={action('click button')}
+  >
+    <StSearch placeholder="Text for search" onSearch={action('search')} />
+  </StPageTitle>
+))

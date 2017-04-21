@@ -1,29 +1,31 @@
 import React from 'react'
-import { storiesOf, action, linkTo } from '@kadira/storybook'
+import { storiesOf, action } from '@kadira/storybook'
+import { withKnobs, number } from '@kadira/storybook-addon-knobs'
 
 import { StSearch } from 'egeo-react'
 
-storiesOf('StSearch', module).addWithInfo('default with normal search', () => (
+const stories = storiesOf('StSearch', module)
+
+stories.addDecorator(withKnobs)
+
+stories.addWithInfo('default with normal search', () => (
   <StSearch placeholder="Text for search" onSearch={action('search')} />
 ))
-storiesOf('StSearch', module).addWithInfo('with clear button', () => (
+stories.addWithInfo('with clear button', () => (
   <StSearch
     placeholder="Text for search"
     hasClearButton={true}
     onSearch={action('search')}
   />
 ))
-storiesOf('StSearch', module).addWithInfo('live search disabled', () => (
+stories.addWithInfo('live search disabled', () => (
   <StSearch
     placeholder="Text for search"
     liveSearch={false}
     onSearch={action('search')}
   />
 ))
-storiesOf(
-  'StSearch',
-  module
-).addWithInfo(
+stories.addWithInfo(
   'default with normal search and minlength of 3 characters',
   () => (
     <StSearch
@@ -33,3 +35,11 @@ storiesOf(
     />
   )
 )
+
+stories.add('default with normal search and custom minlength', () => (
+  <StSearch
+    placeholder="Text for search"
+    onSearch={action('search')}
+    minLength={number('minLength', 3)}
+  />
+))
