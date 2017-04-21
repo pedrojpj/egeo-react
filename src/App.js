@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
 
 import {
   StButton,
@@ -11,12 +11,19 @@ import {
   StDropdownMenu,
   StDropdown,
   StHorizontalTabs,
-  StPageTitle
-} from './Egeo';
+  StPageTitle,
+  StSearch
+} from './Egeo'
+
+const AppComponent = props => (
+  <div className="container" style={{ padding: '20px' }}>
+    {props.children}
+  </div>
+)
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       links: [
@@ -41,7 +48,7 @@ class App extends Component {
           value: 3
         }
       ]
-    };
+    }
   }
 
   render() {
@@ -91,13 +98,19 @@ class App extends Component {
 
           <br /><br />
 
-          <StPageTitle
-            title="Page Title"
-            leftButton="icon-reply"
-            preTitle="Title without left button:"
-          />
+          <AppComponent>
 
-          <br /><br />
+            <StPageTitle
+              title="Page Title"
+              leftButton="icon-reply"
+              preTitle="Title without left button:"
+            />
+
+          </AppComponent>
+
+          <AppComponent>
+            <StSearch />
+          </AppComponent>
 
         </div>
         <StFooter
@@ -105,9 +118,10 @@ class App extends Component {
           image="http://www.stratio.com/wp-content/uploads/2017/01/logo-stratio-white.png"
           rightsText="prueba"
         />
+
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
