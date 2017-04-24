@@ -1,4 +1,9 @@
 <div align="center">
+<a href="https://codeclimate.com/github/pjpenast/egeo-react/coverage"><img src="https://codeclimate.com/github/pjpenast/egeo-react/badges/coverage.svg" alt="Istanbul Code Coverage"/></a>
+
+</div>
+
+<div align="center">
 <img src="https://github.com/Stratio/egeo-web/blob/master/src/assets/images/egeo_logo_c.png">
 </div>
 
