@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './App.css'
+import React, { Component } from 'react';
+import './App.css';
 
 import {
   StButton,
@@ -12,18 +12,19 @@ import {
   StDropdown,
   StHorizontalTabs,
   StPageTitle,
-  StSearch
-} from './Egeo'
+  StSearch,
+  StInput
+} from './Egeo';
 
 const AppComponent = props => (
   <div className="container" style={{ padding: '20px' }}>
     {props.children}
   </div>
-)
+);
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       links: [
@@ -48,7 +49,7 @@ class App extends Component {
           value: 3
         }
       ]
-    }
+    };
   }
 
   render() {
@@ -112,6 +113,10 @@ class App extends Component {
             <StSearch />
           </AppComponent>
 
+          <AppComponent>
+            <StInput label="Name" placeholder="Project Name" required />
+          </AppComponent>
+
         </div>
         <StFooter
           links={this.state.links}
@@ -120,8 +125,8 @@ class App extends Component {
         />
 
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
