@@ -9,6 +9,7 @@ import StDropdown from './StDropdown/StDropdown'
 import StHorizontalTabs from './StHorizontalTabs/StHorizontalTabs'
 import StPageTitle from './StPageTitle/StPageTitle'
 import StSearch from './StSearch/StSearch'
+import StInput from './StInput/StInput'
 
 export {
   StButton,
@@ -21,5 +22,6 @@ export {
   StDropdown,
   StHorizontalTabs,
   StPageTitle,
-  StSearch
+  StSearch,
+  StInput
 }

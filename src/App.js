@@ -12,7 +12,8 @@ import {
   StDropdown,
   StHorizontalTabs,
   StPageTitle,
-  StSearch
+  StSearch,
+  StInput
 } from './Egeo'
 
 const AppComponent = props => (
@@ -110,6 +111,10 @@ class App extends Component {
 
           <AppComponent>
             <StSearch />
+          </AppComponent>
+
+          <AppComponent>
+            <StInput />
           </AppComponent>
 
         </div>
