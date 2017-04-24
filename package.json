@@ -52,7 +52,8 @@
     "object-assign": "4.1.1",
     "postcss-loader": "1.2.2",
     "prettier": "^1.1.0",
-    "promise": "7.1.1","q": "",
+    "promise": "7.1.1",
+    "q": "",
     "react-dev-utils": "^0.5.2",
     "react-test-renderer": "^15.5.4",
     "sass-loader": "^6.0.3",
@@ -74,6 +75,9 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "(.stories)\\.(ts|tsx|js)$"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
