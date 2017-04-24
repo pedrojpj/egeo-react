@@ -2,8 +2,16 @@ language: node_js
 sudo: true
 dist: trusty
 
+addons:
+  code_climate:
+    repo_token: 28678b9f6635277f6fab20206fa4cf8c9168103ec257b5eb09c42b5322d807c1
+
 node_js:
    - '6.9.5'
+
+after_success:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < coverage/lcov.info
 
 before_install:
   - export CHROME_BIN=chromium-browser
@@ -14,4 +22,4 @@ before_script:
   - npm install -g yarn
   - yarn
 
-script: yarn test
+script: yarn test -- --coverage
