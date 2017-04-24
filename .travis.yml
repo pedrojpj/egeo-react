@@ -2,8 +2,16 @@ language: node_js
 sudo: true
 dist: trusty
 
+addons:
+  code_climate:
+    repo_token: 475416af95bcb2cf014acff1e22499cf8c296711
+
 node_js:
    - '6.9.5'
+
+after_success:
+  - npm install -g codeclimate-test-reporter
+  - codeclimate-test-reporter < lcov.info
 
 before_install:
   - export CHROME_BIN=chromium-browser
