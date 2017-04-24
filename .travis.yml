@@ -4,7 +4,7 @@ dist: trusty
 
 addons:
   code_climate:
-    repo_token: 475416af95bcb2cf014acff1e22499cf8c296711
+    repo_token: 28678b9f6635277f6fab20206fa4cf8c9168103ec257b5eb09c42b5322d807c1
 
 node_js:
    - '6.9.5'
