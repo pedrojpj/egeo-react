@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { string, func } from 'prop-types'
+import PropTypes from 'prop-types'
 
 import StButton from '../StButton/StButton'
 import './StPageTitle.scss'
@@ -39,9 +39,9 @@ class StPageTitle extends Component {
 }
 
 StPageTitle.propTypes = {
-  title: string,
-  preTitle: string,
-  onClickButton: func
+  title: PropTypes.string.isRequired,
+  preTitle: PropTypes.string,
+  onClickButton: PropTypes.func
 }
 
 StPageTitle.defaultProps = {
