@@ -78,6 +78,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook n-c .storybook -o docs",
     "ci-publish": "ci-publish",
+    "prepublish": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "jest": {
