@@ -3,9 +3,6 @@
 <a href="https://travis-ci.org/pjpenast/egeo-react"><img src="https://img.shields.io/travis/pjpenast/egeo-react.svg" alt="Build Status"/></a>
 </div>
 
-<div align="center">
-<img src="https://github.com/Stratio/egeo-web/blob/master/src/assets/images/egeo_logo.png">
-</div>
 
 # Egeo React
 
