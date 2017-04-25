@@ -1,41 +1,37 @@
-'use strict';
+'use strict'
 
-var autoprefixer = require('autoprefixer');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var ManifestPlugin = require('webpack-manifest-plugin');
-var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin');
-var paths = require('./paths');
-var getClientEnvironment = require('./env');
-
-
+var autoprefixer = require('autoprefixer')
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var ManifestPlugin = require('webpack-manifest-plugin')
+var InterpolateHtmlPlugin = require('react-dev-utils/InterpolateHtmlPlugin')
+var paths = require('./paths')
+var getClientEnvironment = require('./env')
 
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
-var publicPath = paths.servedPath;
+var publicPath = paths.servedPath
 // Some apps do not use client-side routing with pushState.
 // For these, "homepage" can be set to "." to enable relative asset paths.
-var shouldUseRelativeAssetPaths = publicPath === './';
+var shouldUseRelativeAssetPaths = publicPath === './'
 // `publicUrl` is just like `publicPath`, but we will provide it to our app
 // as %PUBLIC_URL% in `index.html` and `process.env.PUBLIC_URL` in JavaScript.
 // Omit trailing slash as %PUBLIC_URL%/xyz looks better than %PUBLIC_URL%xyz.
-var publicUrl = publicPath.slice(0, -1);
+var publicUrl = publicPath.slice(0, -1)
 // Get environment variables to inject into our app.
-var env = getClientEnvironment(publicUrl);
+var env = getClientEnvironment(publicUrl)
 
 // Assert this just to be safe.
 // Development builds of React are slow and not intended for production.
 if (env.stringified['process.env'].NODE_ENV !== '"production"') {
-  throw new Error('Production builds must have NODE_ENV=production.');
+  throw new Error('Production builds must have NODE_ENV=production.')
 }
 
 module.exports = {
   bail: true,
   devtool: 'source-map',
-  entry: [
-    paths.appLibrary
-  ],
+  entry: [paths.appLibrary],
   output: {
     path: paths.appBuild,
     filename: 'egeo-react.js',
@@ -63,7 +59,8 @@ module.exports = {
           /\.(js|jsx)$/,
           /\.css$/,
           /\.json$/,
-          /\.svg$/
+          /\.svg$/,
+          /\.scss$/
         ],
         loader: 'url',
         query: {
@@ -74,12 +71,15 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         include: paths.appSrc,
-        loader: 'babel',
-
+        loader: 'babel'
       },
       {
         test: /\.css$/,
         loader: 'style!css?importLoaders=1!postcss'
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css?importLodaders=1&localIndentName=[path]___[name]__[local]___[hash:base64:5]!sass-loader'
       },
       {
         test: /\.json$/,
@@ -97,17 +97,17 @@ module.exports = {
   },
 
   // We use PostCSS for autoprefixing only.
-  postcss: function () {
+  postcss: function() {
     return [
       autoprefixer({
         browsers: [
           '>1%',
           'last 4 versions',
           'Firefox ESR',
-          'not ie < 9', // React doesn't support IE8 anyway
+          'not ie < 9' // React doesn't support IE8 anyway
         ]
-      }),
-    ];
+      })
+    ]
   },
   plugins: [
     // Makes some environment variables available to the JS code, for example:
@@ -142,4 +142,4 @@ module.exports = {
     net: 'empty',
     tls: 'empty'
   }
-};
+}
