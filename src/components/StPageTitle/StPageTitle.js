@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { string, isRequired, func } from 'prop-types';
+import React, { Component } from 'react'
+import { string, func } from 'prop-types'
 
-import StButton from '../StButton/StButton';
-import './StPageTitle.scss';
+import StButton from '../StButton/StButton'
+import './StPageTitle.scss'
 
 class StPageTitle extends Component {
   render() {
@@ -34,18 +34,18 @@ class StPageTitle extends Component {
           {this.props.children}
         </div>
       </div>
-    );
+    )
   }
 }
 
 StPageTitle.propTypes = {
-  title: string.isRequired,
+  title: string,
   preTitle: string,
   onClickButton: func
-};
+}
 
 StPageTitle.defaultProps = {
   onClickButton: () => {}
-};
+}
 
-export default StPageTitle;
+export default StPageTitle
