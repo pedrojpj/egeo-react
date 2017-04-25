@@ -9,6 +9,10 @@ node_js:
 after_success:
 - npm install -g codeclimate-test-reporter
 - codeclimate-test-reporter < coverage/lcov.info
+- npm run semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
 before_install:
 - export CHROME_BIN=chromium-browser
 - export DISPLAY=:99.0
@@ -17,8 +21,3 @@ before_script:
 - npm install -g yarn
 - yarn
 script: yarn test -- --coverage
-
-deploy:
-  provider: npm
-  email: pjpena@stratio.com
-  secure: iTCEqeBqSyQz9dFNVMm+5z8rUqIl0I+OA2UDcFKLvAlD3KtUuE0J2zQm/CPVgEjmya2wX9is8VD8EYV5BX+SYpaIIGKDWHxGisMK/c4FQlBZ8Lk1KRGr12Ccu0c/pW5mgsHyj1kmy6+gxA655Ac24hVar299bl7q7U2/HqgCqpD+huK+wIccenvi+ixuGxn+8SjndEF4KHG/HOgpUPYrwSx91xqm+wQ37HiwEmdzlsmS/QY13J7gN52QT74vyOcCRbHKUjigP7oX0GlKzXw1RaAakutsIRZCFRODxKrTYWOWneKY/b4av3uYBnc0zUXU9BSTUjcp2Wt2AX6wybWxNV39JAsFiND8fFaub+6QPgrRmw/0X6XMvKvFLWA9dppMvuhl3xiuQg52RivzUOU7TcgpUSuP1eZac/5FqUjDYMQbjCmKKkqcEZ0EJCcSPKgJk3t/38nYYl6sx3aXeOHGMZ2N1eOb+wuKk3nmbIOZv+JUA1XhnJdTYGrs+bX6lMw+y4Q35p5Ss28O9u2/ScIDtaIHrZxykEKFQUztEXNPrfwfJX2hMwNEBpy8XspPcqJSwXtkPLd+CTfxw/VvXTnas17dEZkFsvrlFW052mO+YmvRcZy1EDHF6R82kqs/WELeSujMkZkcDJRoFck0o0oFgtsnS0eXk182HSyoVyzg+NA=
