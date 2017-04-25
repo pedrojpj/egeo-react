@@ -33,7 +33,7 @@ This is a free adaptation in React of the original library in Angular:
 
 This repo includes the components, services, and utilities built in React.
 
-* Documentation website (soon)
+[Documentation website](https://pjpenast.github.io/egeo-react/)
 
 ## Getting Started
 
