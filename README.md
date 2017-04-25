@@ -1,10 +1,10 @@
 <div align="center">
 <a href="https://codeclimate.com/github/pjpenast/egeo-react/coverage"><img src="https://codeclimate.com/github/pjpenast/egeo-react/badges/coverage.svg" alt="Istanbul Code Coverage"/></a>
-
+<a href="https://travis-ci.org/pjpenast/egeo-react"><img src="https://img.shields.io/travis/pjpenast/egeo-react.svg" alt="Build Status"/></a>
 </div>
 
 <div align="center">
-<img src="https://github.com/Stratio/egeo-web/blob/master/src/assets/images/egeo_logo_c.png">
+<img src="https://github.com/Stratio/egeo-web/blob/master/src/assets/images/egeo_logo.png">
 </div>
 
 # Egeo React
@@ -23,6 +23,7 @@ This is a free adaptation in React of the original library in Angular:
 * [Getting Started](#getting-started)
    * [Dependencies](#dependencies)
    * [Installing](#installing)
+   * [Examples](#examples)
    * [Work with the code](#work-with-the-code)
    * [How to run](#how-to-run)
    * [How to test](#how-to-test)
@@ -54,6 +55,12 @@ You can install Egeo from npm:
 ```
 npm i egeo-react
 ```
+
+### Examples
+
+On the next page you can see examples of the components in operation as well as instructions for their integration:
+
+[Demos](https://pjpenast.github.io/egeo-react/)
 
 ### Work with the code
 
