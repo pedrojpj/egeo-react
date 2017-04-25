@@ -2,6 +2,7 @@
   "name": "egeo-react",
   "version": "0.0.0-development",
   "main": "build/egeo-react.js",
+  "description": "Egeo is an react components library",
   "dependencies": {
     "@stratio/egeo-theme": "0.7.0",
     "classnames": "^2.2.5",
