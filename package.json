@@ -1,6 +1,6 @@
 {
   "name": "egeo-react",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "main": "build/egeo-react.js",
   "dependencies": {
     "@stratio/egeo-theme": "0.7.0",
@@ -10,6 +10,11 @@
     "react": "^15.5.3",
     "react-click-outside": "^2.3.0",
     "react-dom": "^15.5.3"
+  },
+  "release": {
+    "analyzeCommits": "semantic-release-tamia/analyzeCommits",
+    "generateNotes": "semantic-release-tamia/generateNotes",
+    "verifyRelease": "semantic-release-tamia/verifyRelease"
   },
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.4.0",
@@ -57,6 +62,8 @@
     "react-dev-utils": "^0.5.2",
     "react-test-renderer": "^15.5.4",
     "sass-loader": "^6.0.3",
+    "semantic-release": "^6.3.2",
+    "semantic-release-tamia": "^1.1.1",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
@@ -70,7 +77,8 @@
     "test": "node scripts/test.js --env=jsdom",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook n-c .storybook -o docs",
-    "ci-publish": "ci-publish"
+    "ci-publish": "ci-publish",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -106,5 +114,9 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pjpenast/egeo-react.git"
   }
 }
