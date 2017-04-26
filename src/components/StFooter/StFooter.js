@@ -1,58 +1,63 @@
-import React, { Component } from 'react';
-import { func, string, arrayOf, shape } from 'prop-types';
-import './StFooter.scss';
+import React, { Component } from 'react'
+import { func, string, arrayOf, shape } from 'prop-types'
+import CssModules from 'react-css-modules'
+
+import styles from './StFooter.scss'
 
 class StFooter extends Component {
-
   goToLink(link) {
-    this.props.onLink(link);
+    this.props.onLink(link)
   }
 
   render() {
     return (
-      <footer className="footer sth-footer">
-        <div className="content">
+      <footer styleName="footer" className="sth-footer">
+        <div styleName="content">
 
-          {this.props.rightsText ? <p className="text sth-footer-text">{this.props.rightsText}</p> : false}
+          {this.props.rightsText
+            ? <p styleName="text" className="sth-footer-text">
+                {this.props.rightsText}
+              </p>
+            : false}
 
-          {this.props.links.length ?
-            <ul className="sth-footer-links links">
+          {this.props.links.length
+            ? <ul styleName="links" className="sth-footer-links">
 
-              {this.props.links.map((link, i) => (
-                <li key={i}>
-                  <span className="separator">|</span>
-                  <span className="link" onClick={this.goToLink.bind(this, link)} id={this.props.qaTag + '-link-' + i}>{link.title}</span>
-                </li>
-              ))}
+                {this.props.links.map((link, i) => (
+                  <li key={i}>
+                    <span styleName="separator">|</span>
+                    <span
+                      onClick={this.goToLink.bind(this, link)}
+                      id={this.props.qaTag + '-link-' + i}
+                    >
+                      {link.title}
+                    </span>
+                  </li>
+                ))}
 
-            </ul>
+              </ul>
+            : false}
 
-            : false
-          }
-
-          {
-            this.props.image ?
-              <div className="logo sth-footer-logo">
+          {this.props.image
+            ? <div styleName="logo" className="sth-footer-logo">
                 <img src={this.props.image} alt="logo" />
               </div>
-
-              : false
-
-          }
+            : false}
 
         </div>
 
       </footer>
     )
   }
-
 }
 
 StFooter.propTypes = {
-  links: arrayOf(shape({
-    title: string,
-    url: string
-  })),
+  links: arrayOf(
+    shape({
+      title: string,
+      url: string
+    })
+  ),
   rightsText: string,
   qaTag: string,
   image: string,
@@ -61,11 +66,8 @@ StFooter.propTypes = {
 
 StFooter.defaultProps = {
   links: [],
-  onLink: function () {
-
-  },
+  onLink: function() {},
   qaTag: ''
 }
 
-
-export default StFooter;
+export default CssModules(StFooter, styles)
