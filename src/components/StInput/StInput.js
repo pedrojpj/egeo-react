@@ -1,109 +1,111 @@
-import React, { Component } from 'react';
-import classNames from 'classnames';
+import React, { Component } from 'react'
+import classNames from 'classnames'
+import { string, bool, oneOf, number, func } from 'prop-types'
 
-import { string, bool, oneOf, number, func } from 'prop-types';
-
-import './StInput.scss';
+import './StInput.scss'
 
 class StInput extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       focus: props.isFocused,
       error: props.error
-    };
+    }
   }
 
   componentDidMount() {
-    if (this.props.validate) this.checkValidation();
+    if (this.props.validate) this.checkValidation()
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.validate) this.checkValidation(nextProps);
+    if (this.props.validate) this.checkValidation(nextProps)
   }
 
   checkValidation(props = this.props) {
-    let error = false;
-    let value = this.input.value;
+    let error = false
+    let value = this.input.value
 
     if (props.required && !value) {
-      error = true;
+      error = true
     }
 
     if (value.length < props.minLength) {
-      error = true;
+      error = true
     }
 
     if (value.length > props.maxLength) {
-      error = true;
+      error = true
     }
 
     if (props.pattern) {
-      let patter = new RegExp(props.pattern);
+      let patter = new RegExp(props.pattern)
 
       if (!patter.test(value)) {
-        error = true;
+        error = true
       }
     }
 
     this.setState({
       error: error
-    });
+    })
   }
 
   onInputBlur() {
     this.setState({
       focus: false
-    });
+    })
   }
 
   onInputFocus() {
     this.setState({
       focus: true
-    });
+    })
   }
 
   onInputChange(event) {
     if (this.props.validate) {
-      this.checkValidation();
+      this.checkValidation()
     }
 
-    this.props.onChange(event.target.value);
+    this.props.onChange(event.target.value)
   }
 
-  getBarType() {
-    return this.state.error
-      ? 'st-input-error-bar sth-input-error-bar'
-      : 'st-input-normal-bar sth-input-normal-bar';
+  getClassBarType() {
+    return this.state.error ? 'sth-input-error-bar' : 'sth-input-normal-bar'
+  }
+
+  getStyleBarType() {
+    return this.state.error ? 'st-input-error-bar' : 'st-input-normal-bar'
   }
 
   render() {
     let classInputContainer = classNames({
-      'st-input-container': true,
       'sth-input-container': true,
       disabled: this.props.disabled,
       error: this.state.error
-    });
+    })
 
     let classLabel = classNames({
-      'st-input-title': true,
       'sth-input-title': true,
       error: this.state.error,
       active: this.props.focus,
       disabled: this.props.disabled
-    });
+    })
 
     let classInput = classNames({
-      'st-input-remove-default': true,
       'sth-input-remove-default': true,
       disabled: this.props.disabled
-    });
+    })
 
     return (
-      <div className="st-input sth-input">
-        <div className={classInputContainer}>
-          <label className={classLabel} htmlFor={this.props.name}>
+      <div styleName="st-input" className="sth-input">
+        <div className={classInputContainer} styleName="st-input-container">
+          <label
+            className={classLabel}
+            htmlFor={this.props.name}
+            styleName="st-input-title"
+          >
             <span>{this.props.label}</span>
           </label>
           <input
@@ -112,6 +114,7 @@ class StInput extends Component {
             onBlur={this.onInputBlur.bind(this)}
             onKeyUp={this.onInputChange.bind(this)}
             className={classInput}
+            styleName="st-input-remove-default"
             placeholder={this.props.placeholder}
             disabled={this.props.disabled}
             readOnly={this.props.readOnly}
@@ -123,17 +126,20 @@ class StInput extends Component {
             id={this.props.qaTag}
           />
 
-          <span className={'st-input-bar ' + this.getBarType()} />
+          <span
+            className={this.getClassBarType()}
+            styleName={'st-input-bar ' + this.getStyleBarType()}
+          />
         </div>
         <div className="st-input-error-layout">
           {this.state.error
-            ? <span className="st-input-error-message sth-input-error-message">
+            ? <span className="sth-input-error-message">
                 {this.props.errorMessage}
               </span>
             : false}
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -155,7 +161,7 @@ StInput.propTypes = {
   errorMessage: string,
   onChange: func,
   value: string
-};
+}
 
 StInput.defaultProps = {
   type: 'text',
@@ -165,6 +171,6 @@ StInput.defaultProps = {
   error: false,
   onChange: () => {},
   errorMessage: 'This field have errors'
-};
+}
 
-export default StInput;
+export default StInput

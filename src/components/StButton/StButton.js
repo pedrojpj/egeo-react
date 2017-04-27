@@ -1,21 +1,31 @@
-import React, { Component } from 'react';
-import { func, string, oneOf, bool } from 'prop-types';
-import './StButton.scss';
+import React, { Component } from 'react'
+import { func, string, oneOf, bool } from 'prop-types'
+import './StButton.scss'
 
 class StButton extends Component {
-  getButtonTypeClass() {
-    let cssClass = '';
+  getButtonTypeStyle() {
+    let cssClass = []
 
     if (this.props.typeClass) {
-      cssClass +=
+      cssClass.push(this.props.typeClass)
+    }
+
+    return cssClass.join(' ')
+  }
+
+  getButtonTypeClass() {
+    let cssClass = ''
+
+    if (this.props.typeClass) {
+      cssClass =
         'st-button--' +
         this.props.typeClass +
         ' sth-button--' +
-        this.props.typeClass;
+        this.props.typeClass
     }
 
     if (this.props.subtypeClass) {
-      cssClass +=
+      cssClass =
         cssClass +
         ' ' +
         'st-button--' +
@@ -25,20 +35,20 @@ class StButton extends Component {
         ' sth-button--' +
         this.props.typeClass +
         '-' +
-        this.props.subtypeClass;
+        this.props.subtypeClass
     }
 
     if (this.props.themeClass) {
-      cssClass +=
+      cssClass =
         cssClass +
         ' ' +
         'st-button--' +
         this.props.themeClass +
         ' sth-button--' +
-        this.props.themeClass;
+        this.props.themeClass
     }
 
-    return cssClass;
+    return cssClass
   }
 
   render() {
@@ -48,21 +58,22 @@ class StButton extends Component {
         type={this.props.type}
         onClick={this.props.onClick}
         disabled={this.props.disabled}
-        className={'st-button sth-button ' + this.getButtonTypeClass()}
+        styleName={this.getButtonTypeStyle()}
+        className={'sth-button ' + this.getButtonTypeClass()}
       >
         {this.props.leftIcon
-          ? <i className={'st-button__icon ' + this.props.leftIcon} />
+          ? <i styleName="StbuttonIcon" className={this.props.leftIcon} />
           : false}
 
-        <span className="st-button__text">
+        <span styleName="StbuttonText">
           {this.props.text ? this.props.text : this.props.children}
         </span>
 
         {this.props.rightIcon
-          ? <i className={'st-button__icon ' + this.props.rightIcon} />
+          ? <i styleName="StbuttonIcon" className={this.props.rightIcon} />
           : false}
       </button>
-    );
+    )
   }
 }
 
@@ -77,13 +88,13 @@ StButton.propTypes = {
   typeClass: string,
   subtypeClass: string,
   text: string
-};
+}
 
 StButton.defaultProps = {
   type: 'button',
   subtypeClass: 'default',
   typeClass: 'btnMain',
   qaTag: 'button'
-};
+}
 
-export default StButton;
+export default StButton

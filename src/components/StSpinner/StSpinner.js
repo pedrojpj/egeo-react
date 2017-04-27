@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import { string, bool } from 'prop-types';
+import React, { Component } from 'react'
+import { string, bool } from 'prop-types'
+import './StSpinner.scss'
 
 class StSpinner extends Component {
-
   render() {
     return (
-      <div className="st-spinner">
-        {this.props.loading ? <img src={this.props.imageUrl} alt="loading" /> : false}
+      <div styleName="st-spinner">
+        {this.props.loading
+          ? <img src={this.props.imageUrl} alt="loading" />
+          : false}
       </div>
     )
   }
-
 }
 
 StSpinner.propTypes = {
@@ -18,4 +19,4 @@ StSpinner.propTypes = {
   loading: bool
 }
 
-export default StSpinner;
+export default StSpinner

@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { string, arrayOf, bool, func, shape, node } from 'prop-types';
-
-import './StDropdownMenu.scss';
+import React, { Component } from 'react'
+import { string, arrayOf, bool, func, shape, node } from 'prop-types'
+import './StDropdownMenu.scss'
 
 const StDropdownMenuItem = props => (
   <li
@@ -10,21 +9,21 @@ const StDropdownMenuItem = props => (
     className="sth-dropdown-menu-item"
     onClick={props.onClick}
   >
-    {props.item.icon ? <i className={props.item.icon} /> : false}
+    {props.item.icon ? <i styleName={props.item.icon} /> : false}
     {props.item.label}
   </li>
-);
+)
 
 class StDropdownMenu extends Component {
   selectItem(item) {
-    this.props.onChange(item);
+    this.props.onChange(item)
   }
 
   render() {
     return (
       <div>
         {this.props.active
-          ? <div className="sth-dropdown-menu dropdown-menu">
+          ? <div styleName="dropdown-menu" className="sth-dropdown-menu">
 
               <ul aria-hidden={!this.props.active} aria-label="submenu">
                 {this.props.items.map((item, i) => {
@@ -34,14 +33,14 @@ class StDropdownMenu extends Component {
                       key={i}
                       onClick={() => this.selectItem(item)}
                     />
-                  );
+                  )
                 })}
               </ul>
 
             </div>
           : false}
       </div>
-    );
+    )
   }
 }
 
@@ -56,11 +55,11 @@ StDropdownMenu.propTypes = {
     })
   ),
   onChange: func
-};
+}
 
 StDropdownMenu.defaultProps = {
   items: [],
   onChange: () => {}
-};
+}
 
-export default StDropdownMenu;
+export default StDropdownMenu

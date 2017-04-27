@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import {
   string,
   number,
@@ -9,105 +9,104 @@ import {
   shape,
   oneOf,
   node
-} from 'prop-types';
-
-import enhanceWithClickOutside from 'react-click-outside';
-
-import StDropdownmenu from '../StDropdownMenu/StDropdownMenu';
-
-import './StDropdown.scss';
+} from 'prop-types'
+import enhanceWithClickOutside from 'react-click-outside'
+import StDropdownmenu from '../StDropdownMenu/StDropdownMenu'
+import './StDropdown.scss'
 
 class StDropdown extends Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       isActive: false,
       widthMenu: 0,
       value: props.button
-    };
+    }
   }
 
   clickButton() {
     this.setState({
       isActive: !this.state.isActive
-    });
+    })
   }
 
   handleClickOutside() {
     this.setState({
       isActive: false
-    });
+    })
   }
 
   changeOption(item) {
-    let value;
+    let value
 
     if (!this.props.default) {
-      value = item.label;
+      value = item.label
     } else {
-      value = this.props.button;
+      value = this.props.button
     }
 
     this.setState({
       isActive: false,
       value: value
-    });
+    })
 
-    this.props.onChange(item);
+    this.props.onChange(item)
   }
 
   componentDidMount() {
     this.setState({
       widthMenu: ReactDOM.findDOMNode(this.buttonDropdown).offsetWidth
-    });
+    })
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.items) {
-      this.findSelected(nextProps.items);
+      this.findSelected(nextProps.items)
     }
   }
 
   findSelected(items) {
-    let item = items.find(object => object.selected === true);
+    let item = items.find(object => object.selected === true)
 
     if (item) {
       this.setState({
         value: item.label
-      });
+      })
     }
   }
 
   render() {
     const stylesMenu = {
       minWidth: this.state.widthMenu + 'px'
-    };
+    }
 
     const stylesButton = {
       width: this.props.width + 'px'
-    };
+    }
 
     return (
-      <div className="sth-dropdown-container">
+      <div styleName="sth-dropdown-container">
         <button
           tabIndex="0"
           style={stylesButton}
+          styleName="button"
           aria-expanded={this.state.isActive}
-          id={this.props.qaTag + 'button'}
+          id={this.props.qaTag + ' button'}
           aria-haspopup="true"
           className={'button sth-dropdown-button ' + this.props.theme}
           onClick={this.clickButton.bind(this)}
           disabled={this.props.disabled}
           ref={button => {
-            this.buttonDropdown = button;
+            this.buttonDropdown = button
           }}
         >
           <span>{this.state.value}</span>
           <i className="icon-arrow4_down" />
         </button>
         <div
-          className={'sth-dropdown-menu menu ' + this.props.theme}
+          className={'sth-dropdown-menu ' + this.props.theme}
+          styleName="menu"
           style={stylesMenu}
         >
           <StDropdownmenu
@@ -116,13 +115,13 @@ class StDropdown extends Component {
             className={this.props.themeClass}
             onChange={item => this.changeOption(item)}
             ref={dropdown => {
-              this.dropdownMenu = dropdown;
+              this.dropdownMenu = dropdown
             }}
             active={this.state.isActive}
           />
         </div>
       </div>
-    );
+    )
   }
 }
 
@@ -139,14 +138,16 @@ StDropdown.propTypes = {
       selected: bool
     })
   ),
-  onChange: func
-};
+  onChange: func,
+  qaTag: string
+}
 
 StDropdown.defaultProps = {
   default: false,
   items: [],
   theme: 'themeA',
-  onChange: () => {}
-};
+  onChange: () => {},
+  qaTag: 'dropdown'
+}
 
-export default enhanceWithClickOutside(StDropdown);
+export default enhanceWithClickOutside(StDropdown)

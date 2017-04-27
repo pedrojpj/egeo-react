@@ -7,22 +7,23 @@ import './StPageTitle.scss'
 class StPageTitle extends Component {
   render() {
     return (
-      <div className="st-page-title sth-page-title">
+      <div styleName="st-page-title" className="sth-page-title">
         {this.props.leftButton
-          ? <div className="button-box sth-page-title-button-box">
+          ? <div styleName="button-box" className="sth-page-title-button-box">
               <StButton
                 text="Tool subtype4"
                 typeClass="btnTool"
                 subtypeClass="subtype4"
                 id={this.props.qaTag + '-left-button'}
                 leftIcon={this.props.leftButton}
-                className="button-box sth-page-title-button-box"
+                styleName="button-box"
+                className="sth-page-title-button-box"
                 input="button"
                 onClick={this.props.onClickButton}
               />
             </div>
           : false}
-        <div className="main-title sth-page-title-main-title">
+        <div styleName="main-title" className="sth-page-title-main-title">
           {this.props.preTitle
             ? <span className="sth-page-title-pre-title">
                 {this.props.preTitle}
@@ -30,7 +31,7 @@ class StPageTitle extends Component {
             : false}
           <span className="sth-page-title-title">{this.props.title}</span>
         </div>
-        <div>
+        <div styleName="content">
           {this.props.children}
         </div>
       </div>

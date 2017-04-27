@@ -50,7 +50,7 @@ class StSearch extends Component {
 
   render() {
     return (
-      <div className="st-search sth-search">
+      <div styleName="st-search" className="sth-search">
         <input
           id={this.props.qaTag}
           placeholder={this.props.placeholder}
@@ -61,19 +61,22 @@ class StSearch extends Component {
             this.searchBox = input
           }}
           value={this.props.value}
-          className="st-search-input sth-search-input"
+          styleName="st-search-input"
+          className="sth-search-input"
         />
 
         {!this.state.focus || !this.props.hasClearButton
           ? <i
-              className="st-search-icon sth-search-icon icon-search"
+              styleName="st-search-icon"
+              className="sth-search-icon icon-search"
               onMouseDown={() => this.launchSearch(true, true)}
               tabIndex="0"
             />
           : <div>
               {this.props.hasClearButton
                 ? <i
-                    className="st-search-icon sth-search-icon icon-cross"
+                    styleName="st-search-icon"
+                    className="sth-search-icon icon-cross"
                     onMouseDown={this.clearInput.bind(this)}
                     tabIndex="0"
                   />
