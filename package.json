@@ -29,6 +29,7 @@
     "babel-eslint": "7.1.1",
     "babel-jest": "18.0.0",
     "babel-loader": "6.2.10",
+    "babel-plugin-react-css-modules": "^2.6.1",
     "babel-preset-react-app": "^2.2.0",
     "babel-runtime": "^6.20.0",
     "case-sensitive-paths-webpack-plugin": "1.1.4",
@@ -58,10 +59,10 @@
     "node-sass": "^4.5.2",
     "object-assign": "4.1.1",
     "postcss-loader": "1.2.2",
+    "postcss-scss": "^0.4.1",
     "prettier": "^1.1.0",
     "promise": "7.1.1",
     "q": "",
-    "react-css-modules": "^4.2.1",
     "react-dev-utils": "^0.5.2",
     "react-test-renderer": "^15.5.4",
     "resolve-url-loader": "^2.0.2",
@@ -110,12 +111,24 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
     ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
     }
   },
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      [
+        "react-css-modules",
+        {
+          "filetypes": {
+            ".scss": "postcss-scss"
+          },
+          "webpackHotModuleReloading": true
+        }
+      ]
     ]
   },
   "eslintConfig": {

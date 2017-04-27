@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { arrayOf, bool, shape, string, func } from 'prop-types'
 import classNames from 'classnames'
-import CSSModules from 'react-css-modules'
 
 import styles from './StHorizontalTabs.scss'
 
@@ -27,8 +26,6 @@ class StHorizontalItem extends Component {
     )
   }
 }
-
-StHorizontalItem = CSSModules(StHorizontalItem, styles)
 
 class StHorizontalTabs extends Component {
   constructor(props) {
@@ -107,4 +104,4 @@ StHorizontalTabs.defaultProps = {
   qaTag: 'horizontal-tab'
 }
 
-export default CSSModules(StHorizontalTabs, styles)
+export default StHorizontalTabs

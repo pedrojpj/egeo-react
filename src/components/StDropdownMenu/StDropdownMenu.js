@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { string, arrayOf, bool, func, shape, node } from 'prop-types'
-import CSSModules from 'react-css-modules'
-
 import styles from './StDropdownMenu.scss'
 
 const StDropdownMenuItem = props => (
@@ -64,4 +62,4 @@ StDropdownMenu.defaultProps = {
   onChange: () => {}
 }
 
-export default CSSModules(StDropdownMenu, styles, { allowMultiple: true })
+export default StDropdownMenu

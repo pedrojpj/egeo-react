@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { func, string, oneOf, bool } from 'prop-types'
-import CSSModules from 'react-css-modules'
-
 import styles from './StButton.scss'
+
+console.log(styles)
 
 class StButton extends Component {
   getButtonTypeStyle() {
     let cssClass = []
 
     if (this.props.typeClass) {
-      cssClass.push('st-button--' + this.props.typeClass)
+      cssClass.push(this.props.typeClass)
     }
 
     return cssClass.join(' ')
@@ -19,7 +19,7 @@ class StButton extends Component {
     let cssClass = ''
 
     if (this.props.typeClass) {
-      cssClass +=
+      cssClass =
         'st-button--' +
         this.props.typeClass +
         ' sth-button--' +
@@ -27,7 +27,7 @@ class StButton extends Component {
     }
 
     if (this.props.subtypeClass) {
-      cssClass +=
+      cssClass =
         cssClass +
         ' ' +
         'st-button--' +
@@ -41,7 +41,7 @@ class StButton extends Component {
     }
 
     if (this.props.themeClass) {
-      cssClass +=
+      cssClass =
         cssClass +
         ' ' +
         'st-button--' +
@@ -60,19 +60,19 @@ class StButton extends Component {
         type={this.props.type}
         onClick={this.props.onClick}
         disabled={this.props.disabled}
-        styleName={'st-button ' + this.getButtonTypeStyle()}
-        className={'sth-button' + this.getButtonTypeClass()}
+        styleName={this.getButtonTypeStyle()}
+        className={'sth-button ' + this.getButtonTypeClass()}
       >
         {this.props.leftIcon
-          ? <i styleName="st-button__icon" className={this.props.leftIcon} />
+          ? <i styleName="StbuttonIcon" className={this.props.leftIcon} />
           : false}
 
-        <span styleName="st-button__text">
+        <span styleName="StbuttonText">
           {this.props.text ? this.props.text : this.props.children}
         </span>
 
         {this.props.rightIcon
-          ? <i styleName="st-button__icon" className={this.props.rightIcon} />
+          ? <i styleName="StbuttonIcon" className={this.props.rightIcon} />
           : false}
       </button>
     )
@@ -99,4 +99,4 @@ StButton.defaultProps = {
   qaTag: 'button'
 }
 
-export default CSSModules(StButton, styles, { allowMultiple: true })
+export default StButton

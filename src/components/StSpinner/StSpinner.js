@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { string, bool } from 'prop-types'
-import CSSModules from 'react-css-modules'
-
 import styles from './StSpinner.scss'
 
 class StSpinner extends Component {
@@ -21,4 +19,4 @@ StSpinner.propTypes = {
   loading: bool
 }
 
-export default CSSModules(StSpinner, styles)
+export default StSpinner

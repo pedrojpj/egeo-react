@@ -10,8 +10,6 @@ import {
   oneOf,
   node
 } from 'prop-types'
-import CSSModules from 'react-css-modules'
-
 import enhanceWithClickOutside from 'react-click-outside'
 import StDropdownmenu from '../StDropdownMenu/StDropdownMenu'
 import styles from './StDropdown.scss'
@@ -152,4 +150,4 @@ StDropdown.defaultProps = {
   qaTag: 'dropdown'
 }
 
-export default enhanceWithClickOutside(CSSModules(StDropdown, styles))
+export default enhanceWithClickOutside(StDropdown)

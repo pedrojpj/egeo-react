@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { func, bool, string, number } from 'prop-types'
-import CSSModules from 'react-css-modules'
 
 import styles from './StSearch.scss'
 
@@ -110,4 +109,4 @@ StSearch.defaultProps = {
   liveSearch: true
 }
 
-export default CSSModules(StSearch, styles)
+export default StSearch

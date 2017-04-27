@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import CSSModules from 'react-css-modules'
 
 import StButton from '../StButton/StButton'
 import styles from './StPageTitle.scss'
@@ -50,4 +49,4 @@ StPageTitle.defaultProps = {
   onClickButton: () => {}
 }
 
-export default CSSModules(StPageTitle, styles)
+export default StPageTitle

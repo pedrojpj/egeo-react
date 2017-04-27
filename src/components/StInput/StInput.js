@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
 import { string, bool, oneOf, number, func } from 'prop-types'
-import CSSModules from 'react-css-modules'
 
 import styles from './StInput.scss'
 
@@ -174,4 +173,4 @@ StInput.defaultProps = {
   errorMessage: 'This field have errors'
 }
 
-export default CSSModules(StInput, styles, { allowMultiple: true })
+export default StInput

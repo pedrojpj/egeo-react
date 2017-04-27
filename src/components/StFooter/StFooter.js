@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { func, string, arrayOf, shape } from 'prop-types'
-import CssModules from 'react-css-modules'
-
 import styles from './StFooter.scss'
 
 class StFooter extends Component {
@@ -70,4 +68,4 @@ StFooter.defaultProps = {
   qaTag: ''
 }
 
-export default CssModules(StFooter, styles)
+export default StFooter

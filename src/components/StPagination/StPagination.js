@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { string, number, arrayOf, bool, func, shape, oneOf } from 'prop-types'
-import CSSModules from 'react-css-modules'
 
 import StButton from '../StButton/StButton'
 import StDropdown from '../StDropdown/StDropdown'
@@ -247,4 +246,4 @@ StPagination.defaultProps = {
   }
 }
 
-export default CSSModules(StPagination, styles)
+export default StPagination

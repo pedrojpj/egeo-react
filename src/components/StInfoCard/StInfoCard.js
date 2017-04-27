@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { string } from 'prop-types'
-import CSSModules from 'react-css-modules'
-
 import styles from './StInfoCard.scss'
 
 class StInfoCard extends Component {
@@ -48,4 +46,4 @@ StInfoCard.propTypes = {
   title: string
 }
 
-export default CSSModules(StInfoCard, styles)
+export default StInfoCard
