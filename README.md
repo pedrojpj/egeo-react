@@ -50,7 +50,7 @@ What your app will need to work with Egeo React:
 You can install Egeo from npm:
 
 ```
-npm i egeo-react
+npm i egeo-react --save
 ```
 
 ### Examples
