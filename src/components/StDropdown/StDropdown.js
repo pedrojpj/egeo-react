@@ -12,7 +12,7 @@ import {
 } from 'prop-types'
 import enhanceWithClickOutside from 'react-click-outside'
 import StDropdownmenu from '../StDropdownMenu/StDropdownMenu'
-import styles from './StDropdown.scss'
+import './StDropdown.scss'
 
 class StDropdown extends Component {
   constructor(props) {

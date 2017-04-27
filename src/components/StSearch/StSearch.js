@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { func, bool, string, number } from 'prop-types'
 
-import styles from './StSearch.scss'
+import './StSearch.scss'
 
 class StSearch extends Component {
   constructor(props) {

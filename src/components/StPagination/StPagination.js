@@ -4,7 +4,7 @@ import { string, number, arrayOf, bool, func, shape, oneOf } from 'prop-types'
 import StButton from '../StButton/StButton'
 import StDropdown from '../StDropdown/StDropdown'
 
-import styles from './StPagination.scss'
+import './StPagination.scss'
 
 class StPagination extends Component {
   constructor(props) {

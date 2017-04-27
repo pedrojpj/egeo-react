@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { func, string, arrayOf, shape } from 'prop-types'
-import styles from './StFooter.scss'
+import './StFooter.scss'
 
 class StFooter extends Component {
   goToLink(link) {

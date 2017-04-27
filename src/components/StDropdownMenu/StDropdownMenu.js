@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { string, arrayOf, bool, func, shape, node } from 'prop-types'
-import styles from './StDropdownMenu.scss'
+import './StDropdownMenu.scss'
 
 const StDropdownMenuItem = props => (
   <li

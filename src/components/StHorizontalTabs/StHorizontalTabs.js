@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { arrayOf, bool, shape, string, func } from 'prop-types'
 import classNames from 'classnames'
 
-import styles from './StHorizontalTabs.scss'
+import './StHorizontalTabs.scss'
 
 class StHorizontalItem extends Component {
   render() {

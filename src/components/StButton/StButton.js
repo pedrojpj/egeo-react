@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { func, string, oneOf, bool } from 'prop-types'
-import styles from './StButton.scss'
-
-console.log(styles)
+import './StButton.scss'
 
 class StButton extends Component {
   getButtonTypeStyle() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { string, bool } from 'prop-types'
-import styles from './StSpinner.scss'
+import './StSpinner.scss'
 
 class StSpinner extends Component {
   render() {

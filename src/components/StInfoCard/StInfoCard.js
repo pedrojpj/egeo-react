@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { string } from 'prop-types'
-import styles from './StInfoCard.scss'
+import './StInfoCard.scss'
 
 class StInfoCard extends Component {
   render() {

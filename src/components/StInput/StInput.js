@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classNames from 'classnames'
 import { string, bool, oneOf, number, func } from 'prop-types'
 
-import styles from './StInput.scss'
+import './StInput.scss'
 
 class StInput extends Component {
   constructor(props) {

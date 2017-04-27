@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import StButton from '../StButton/StButton'
-import styles from './StPageTitle.scss'
+import './StPageTitle.scss'
 
 class StPageTitle extends Component {
   render() {
