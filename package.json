@@ -85,8 +85,10 @@
     "build-storybook": "build-storybook n-c .storybook -o docs",
     "ci-publish": "ci-publish",
     "prepublish": "npm run build",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
-    "deploy-storybook": "storybook-to-ghpages"
+    "semantic-release": "npm run changelog:commit && semantic-release pre && npm publish && semantic-release post",
+    "deploy-storybook": "storybook-to-ghpages",
+    "changelog:preview": "sr-changelog",
+    "changelog:commit": "sr-changelog commit"
   },
   "jest": {
     "collectCoverageFrom": [
