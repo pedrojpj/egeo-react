@@ -5,7 +5,7 @@ import infoAddon from '@kadira/react-storybook-addon-info'
 import React from 'react'
 
 addDecorator(story => (
-  <div style={{ textAlign: 'center', padding: 20 }}>
+  <div style={{ textAlign: 'center', padding: '40px 20px' }}>
     {story()}
   </div>
 ))

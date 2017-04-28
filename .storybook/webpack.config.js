@@ -45,6 +45,25 @@ module.exports = {
           'sass'
         ],
         include: [paths.appComponents]
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        options: {
+          presets: ['react-app'],
+          plugins: [
+            [
+              'react-css-modules',
+              {
+                filetypes: {
+                  '.scss': 'postcss-scss'
+                },
+                webpackHotModuleReloading: true
+              }
+            ]
+          ]
+        }
       }
     ]
   }

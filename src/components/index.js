@@ -10,6 +10,7 @@ import StHorizontalTabs from './StHorizontalTabs/StHorizontalTabs'
 import StPageTitle from './StPageTitle/StPageTitle'
 import StSearch from './StSearch/StSearch'
 import StInput from './StInput/StInput'
+import StTooltip from './StTooltip/StTooltip'
 
 export {
   StButton,
@@ -23,5 +24,6 @@ export {
   StHorizontalTabs,
   StPageTitle,
   StSearch,
-  StInput
+  StInput,
+  StTooltip
 }
