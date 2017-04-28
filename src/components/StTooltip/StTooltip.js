@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { string, bool, oneOf } from 'prop-types'
-import classNames from 'classnames'
 import enhanceWithClickOutside from 'react-click-outside'
 
 import { Manager, Target, Popper, Arrow } from 'react-popper'
@@ -62,7 +61,7 @@ class StTooltip extends Component {
 
   render() {
     return (
-      <Manager>
+      <Manager style={{ display: 'inline' }}>
         <span className="st-tooltip">
           <span
             styleName="st-tooltip-content"
@@ -71,7 +70,7 @@ class StTooltip extends Component {
             onMouseEnter={this.onMouseEnter.bind(this)}
             onMouseLeave={this.onMouseLeave.bind(this)}
           >
-            <Target>
+            <Target style={{ display: 'inline' }}>
               <span id={this.props.qaTag} className="sth-tooltip-content-link">
                 {this.props.children}
               </span>
@@ -81,7 +80,7 @@ class StTooltip extends Component {
               <span
                 style={this.stylePop()}
                 className="sth-tooltip-content-text"
-                styleName="st-tooltip-content-text"
+                styleName={'st-tooltip-content-text ' + this.props.placement}
               >
                 {this.props.text}
                 <Arrow

@@ -1,8 +1,6 @@
 .st-tooltip-content {
    position: relative;
-   display: block;
    cursor: pointer;
-   float: left;
 }
 
 .st-tooltip-content-text {
@@ -10,6 +8,20 @@
    padding: 6px;
    line-height: 20px;
    border-radius: 0;
+
+  &.left {
+    margin-right: 10px;
+  }
+
+  &.right {
+    margin-left: 10px;
+  }
+
+  &.bottom {
+    margin-top: 10px;
+  }
+
+
 }
 
 .st-tooltip-content:hover.on-hover .st-tooltip-content-text,
@@ -19,6 +31,7 @@
    bottom: 25px;
    left: 0;
    z-index: 999;
+
 }
 
 .st-tooltip-arrow {
@@ -37,24 +50,22 @@
   }
 
   &.bottom {
-    top: -10px;
+    top: 0;
     position: absolute;
     border-bottom: 6px solid #cbcbcb;
     margin-right: 20px
   }
 
   &.left {
-    left: -10px;
+    right: 0;
     position: absolute;
-    border-bottom: 6px solid #cbcbcb;
-    margin-right: 20px
+    border-left: 6px solid #cbcbcb;
   }
 
   &.right {
-    right: -10px;
+    left: 0;
     position: absolute;
-    border-bottom: 6px solid #cbcbcb;
-    margin-right: 20px
+    border-right: 6px solid #cbcbcb;
   }
 
 }

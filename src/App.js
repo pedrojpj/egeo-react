@@ -119,11 +119,15 @@ class App extends Component {
           </AppComponent>
 
           <AppComponent>
-            <StTooltip text="example" placement="top" showOnClick>
-              <div>
-                example
-              </div>
-            </StTooltip>
+            <div
+              style={{ textAlign: 'center', width: '100%', height: '100px' }}
+            >
+              <StTooltip text="example" placement="bottom">
+                <p style={{ display: 'inline' }}>
+                  example
+                </p>
+              </StTooltip>
+            </div>
           </AppComponent>
 
         </div>
