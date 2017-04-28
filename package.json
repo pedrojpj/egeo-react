@@ -1,6 +1,6 @@
 {
   "name": "egeo-react",
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "main": "build/egeo-react.js",
   "description": "Egeo is an react components library",
   "dependencies": {
