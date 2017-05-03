@@ -14,7 +14,9 @@ import {
   StPageTitle,
   StSearch,
   StInput,
-  StTooltip
+  StTooltip,
+  StRadio,
+  StRadioGroup
 } from './Egeo'
 
 const AppComponent = props => (
@@ -128,6 +130,15 @@ class App extends Component {
                 </p>
               </StTooltip>
             </div>
+          </AppComponent>
+
+          <AppComponent>
+            <StRadioGroup name="options">
+              <StRadio value="1" checked={true}>Option 1</StRadio>
+              <StRadio value="2">Option 2</StRadio>
+              <StRadio value="3">Option 3</StRadio>
+            </StRadioGroup>
+
           </AppComponent>
 
         </div>

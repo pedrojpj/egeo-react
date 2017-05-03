@@ -11,6 +11,8 @@ import StPageTitle from './StPageTitle/StPageTitle'
 import StSearch from './StSearch/StSearch'
 import StInput from './StInput/StInput'
 import StTooltip from './StTooltip/StTooltip'
+import StRadio from './StRadio/StRadio'
+import StRadioGroup from './StRadio/StRadioGroup'
 
 export {
   StButton,
@@ -25,5 +27,7 @@ export {
   StPageTitle,
   StSearch,
   StInput,
-  StTooltip
+  StTooltip,
+  StRadio,
+  StRadioGroup
 }
