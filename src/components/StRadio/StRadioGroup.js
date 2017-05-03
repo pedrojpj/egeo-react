@@ -32,14 +32,7 @@ class StRadioGroup extends Component {
   }
 
   render() {
-    const {
-      name,
-      value,
-      children,
-      container,
-      childContainer,
-      onChange
-    } = this.props
+    const { childContainer } = this.props
 
     return (
       <div>
