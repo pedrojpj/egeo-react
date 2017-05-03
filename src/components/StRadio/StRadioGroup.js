@@ -38,11 +38,8 @@ class StRadioGroup extends Component {
       children,
       container,
       childContainer,
-      onChange,
-      ...otherProps
+      onChange
     } = this.props
-
-    const hasOnChange = typeof onChange === 'function'
 
     return (
       <div>
