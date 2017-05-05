@@ -13,6 +13,7 @@ import StInput from './StInput/StInput'
 import StTooltip from './StTooltip/StTooltip'
 import StRadio from './StRadio/StRadio'
 import StRadioGroup from './StRadio/StRadioGroup'
+import StCheckbox from './StCheckbox/StCheckbox'
 
 export {
   StButton,
@@ -29,5 +30,6 @@ export {
   StInput,
   StTooltip,
   StRadio,
-  StRadioGroup
+  StRadioGroup,
+  StCheckbox
 }
