@@ -61,47 +61,67 @@ class App extends Component {
       <div className="App">
         <div className="App-header" />
         <div className="App-intro">
-          <StButton leftIcon="icon-circle-check" type="button">Button</StButton>
 
-          <br />
+          <AppComponent>
+            <StButton leftIcon="icon-circle-check" type="button">
+              Button
+            </StButton>
 
-          <StSpinner
-            imageUrl="https://stratio.github.io/egeo-web/1.3.1/assets/images/loading_spinner.gif"
-            loading
-          />
+          </AppComponent>
 
-          <StInfoBox title="Example">
-            <p>You can put any content here</p>
-          </StInfoBox>
+          <AppComponent>
 
-          <br />
+            <StSpinner
+              imageUrl="https://stratio.github.io/egeo-web/1.3.1/assets/images/loading_spinner.gif"
+              loading
+            />
 
-          <StInfoCard
-            title="Example"
-            image="https://stratio.github.io/egeo-web/1.3.1/assets/images/stratio.png"
-          >
-            <p>You can put any content here</p>
-          </StInfoCard>
+          </AppComponent>
 
-          <br />
+          <AppComponent>
 
-          <StPagination total={200} />
+            <StInfoBox title="Example">
+              <p>You can put any content here</p>
+            </StInfoBox>
 
-          <br />
+          </AppComponent>
 
-          <StDropdownMenu active items={this.state.items} />
+          <AppComponent>
 
-          <br />
+            <StInfoCard
+              title="Example"
+              image="https://stratio.github.io/egeo-web/1.3.1/assets/images/stratio.png"
+            >
+              <p>You can put any content here</p>
+            </StInfoCard>
 
-          <div className="dropdown">
-            <StDropdown items={this.state.items} button="Select one item" />
-          </div>
+          </AppComponent>
 
-          <br />
+          <AppComponent>
 
-          <StHorizontalTabs options={[{ text: 'Tab1' }, { text: 'Tab2' }]} />
+            <StPagination total={200} />
 
-          <br /><br />
+          </AppComponent>
+
+          <AppComponent>
+
+            <StDropdownMenu active items={this.state.items} />
+
+          </AppComponent>
+
+          <AppComponent>
+
+            <div className="dropdown">
+              <StDropdown items={this.state.items} button="Select one item" />
+            </div>
+
+          </AppComponent>
+
+          <AppComponent>
+
+            <StHorizontalTabs options={[{ text: 'Tab1' }, { text: 'Tab2' }]} />
+
+          </AppComponent>
 
           <AppComponent>
 
