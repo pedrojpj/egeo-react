@@ -16,11 +16,12 @@ import {
   StInput,
   StTooltip,
   StRadio,
-  StRadioGroup
+  StRadioGroup,
+  StCheckbox
 } from './Egeo'
 
 const AppComponent = props => (
-  <div className="container" style={{ padding: '20px' }}>
+  <div className="container" style={{ padding: '20px', textAlign: 'left' }}>
     {props.children}
   </div>
 )
@@ -139,6 +140,10 @@ class App extends Component {
               <StRadio value="3">Option 3</StRadio>
             </StRadioGroup>
 
+          </AppComponent>
+
+          <AppComponent>
+            <StCheckbox value="1" checked>Option 1</StCheckbox>
           </AppComponent>
 
         </div>

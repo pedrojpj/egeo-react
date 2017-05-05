@@ -13,3 +13,32 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.sth-checkbox {
+
+  .sth-checkbox-custom {
+    border: 1px solid egeo-get-color(n5);
+
+    &:hover {
+      border-color: egeo-get-color(a1)
+    }
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: default;
+
+    .sth-checkbox-custom {
+      &:hover {
+        border-color: egeo-get-color(n5);
+      }
+    }
+  }
+
+
+
+  .sth-checkbox-label {
+    font-family: egeo-get-font(body);
+    font-size: egeo-get-font-size(body_medium)
+  }
+}
