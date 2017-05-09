@@ -20,7 +20,10 @@ class StCheckbox extends Component {
   }
 
   handleChange() {
-    this.props.onChange(this.props.value)
+    this.props.onChange({
+      checked: this.state.checked,
+      value: this.props.value
+    })
   }
 
   render() {
@@ -40,6 +43,7 @@ class StCheckbox extends Component {
           <input
             type="checkbox"
             ref={input => this.input}
+            name={this.props.name}
             required={this.props.required}
             checked={this.props.checked}
             disabled={this.props.disabled}
@@ -53,9 +57,12 @@ class StCheckbox extends Component {
 
         <div styleName="custom-checkbox" className={classCustom} />
 
-        <span className="sth-checkbox-label" styleName="label">
-          {this.props.children}
-        </span>
+        {this.props.children
+          ? <span className="sth-checkbox-label" styleName="label">
+              {this.props.children}
+            </span>
+          : false}
+
       </label>
     )
   }
@@ -64,7 +71,8 @@ class StCheckbox extends Component {
 StCheckbox.propTypes = {
   onChange: propTypes.func,
   disabled: propTypes.bool,
-  value: propTypes.string,
+  value: propTypes.node,
+  name: propTypes.string,
   checked: propTypes.bool,
   required: propTypes.bool,
   readOnly: propTypes.bool

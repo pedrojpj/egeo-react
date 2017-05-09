@@ -78,7 +78,7 @@ class StButton extends Component {
 }
 
 StButton.propTypes = {
-  click: func,
+  onClick: func,
   leftIcon: string,
   rightIcon: string,
   qaTag: string,
@@ -91,6 +91,7 @@ StButton.propTypes = {
 }
 
 StButton.defaultProps = {
+  onClick: () => {},
   type: 'button',
   subtypeClass: 'default',
   typeClass: 'btnMain',

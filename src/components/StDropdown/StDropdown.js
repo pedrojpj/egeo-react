@@ -1,15 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import {
-  string,
-  number,
-  arrayOf,
-  bool,
-  func,
-  shape,
-  oneOf,
-  node
-} from 'prop-types'
+import propTypes from 'prop-types'
 import enhanceWithClickOutside from 'react-click-outside'
 import StDropdownmenu from '../StDropdownMenu/StDropdownMenu'
 import './StDropdown.scss'
@@ -126,20 +117,20 @@ class StDropdown extends Component {
 }
 
 StDropdown.propTypes = {
-  width: number,
-  default: bool,
-  disabled: bool,
-  theme: oneOf(['themeA', 'themeB']),
-  items: arrayOf(
-    shape({
-      label: string,
-      value: node,
-      icon: string,
-      selected: bool
+  width: propTypes.number,
+  default: propTypes.bool,
+  disabled: propTypes.bool,
+  theme: propTypes.oneOf(['themeA', 'themeB']),
+  items: propTypes.arrayOf(
+    propTypes.shape({
+      label: propTypes.string,
+      value: propTypes.node,
+      icon: propTypes.string,
+      selected: propTypes.bool
     })
   ),
-  onChange: func,
-  qaTag: string
+  onChange: propTypes.func,
+  qaTag: propTypes.string
 }
 
 StDropdown.defaultProps = {
