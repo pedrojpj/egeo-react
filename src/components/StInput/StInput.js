@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import classNames from 'classnames'
-import { string, bool, oneOf, number, func } from 'prop-types'
+import propTypes from 'prop-types'
 
 import './StInput.scss'
 
@@ -10,7 +10,8 @@ class StInput extends Component {
 
     this.state = {
       focus: props.isFocused,
-      error: props.error
+      error: props.error,
+      value: props.value
     }
   }
 
@@ -39,9 +40,9 @@ class StInput extends Component {
     }
 
     if (props.pattern) {
-      let patter = new RegExp(props.pattern)
+      let pattern = new RegExp(props.pattern)
 
-      if (!patter.test(value)) {
+      if (!pattern.test(value)) {
         error = true
       }
     }
@@ -64,6 +65,10 @@ class StInput extends Component {
   }
 
   onInputChange(event) {
+    this.setState({
+      value: event.target.value
+    })
+
     if (this.props.validate) {
       this.checkValidation()
     }
@@ -120,7 +125,7 @@ class StInput extends Component {
             readOnly={this.props.readOnly}
             name={this.props.name}
             type={this.props.type}
-            value={this.props.value}
+            defaultValue={this.state.value}
             maxLength={this.props.maxLength}
             minLength={this.props.minLength}
             id={this.props.qaTag}
@@ -131,7 +136,7 @@ class StInput extends Component {
             styleName={'st-input-bar ' + this.getStyleBarType()}
           />
         </div>
-        <div className="st-input-error-layout">
+        <div styleName="st-input-error-layout">
           {this.state.error
             ? <span className="sth-input-error-message">
                 {this.props.errorMessage}
@@ -144,23 +149,23 @@ class StInput extends Component {
 }
 
 StInput.propTypes = {
-  label: string,
-  disabled: bool,
-  readOnly: bool,
-  placeholder: string,
-  name: string,
-  type: oneOf(['text', 'number', 'password']),
-  qaTag: string,
-  required: bool,
-  maxLength: number,
-  minLength: number,
-  pattern: string,
-  isFocused: bool,
-  validate: bool,
-  error: bool,
-  errorMessage: string,
-  onChange: func,
-  value: string
+  label: propTypes.string,
+  disabled: propTypes.bool,
+  readOnly: propTypes.bool,
+  placeholder: propTypes.string,
+  name: propTypes.string,
+  type: propTypes.oneOf(['text', 'number', 'password']),
+  qaTag: propTypes.string,
+  required: propTypes.bool,
+  maxLength: propTypes.number,
+  minLength: propTypes.number,
+  pattern: propTypes.string,
+  isFocused: propTypes.bool,
+  validate: propTypes.bool,
+  error: propTypes.bool,
+  errorMessage: propTypes.string,
+  onChange: propTypes.func,
+  value: propTypes.string
 }
 
 StInput.defaultProps = {
