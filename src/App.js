@@ -168,7 +168,16 @@ class App extends Component {
           </AppComponent>
 
           <AppComponent>
-            <StTextarea name="example">Comment</StTextarea>
+
+            <StTextarea
+              placeholder="Project name"
+              label="Name"
+              errorMessage="This field is error"
+              validate
+              value="Prueba prueba"
+              maxLength={5}
+            />
+
           </AppComponent>
 
         </div>

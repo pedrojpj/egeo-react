@@ -9,7 +9,7 @@ const stories = storiesOf('StTextarea', module)
 stories.addDecorator(withKnobs)
 
 stories.addWithInfo('default', () => (
-  <StTextarea name="example" onChange={action('input')}>Comment</StTextarea>
+  <StTextarea name="example" onChange={action('input')} label="Comment" />
 ))
 
 stories.addWithInfo('with placeholder', () => (
@@ -37,9 +37,8 @@ stories.addWithInfo('with value', () => (
     onChange={action('input')}
     placeholder="Enter your comment"
     label="comment"
-  >
-    My comment
-  </StTextarea>
+    value="My comment"
+  />
 ))
 
 stories.addWithInfo('readOnly', () => (
@@ -51,4 +50,24 @@ stories.addWithInfo('readOnly', () => (
   >
     My comment
   </StTextarea>
+))
+
+stories.addWithInfo('with validation required', () => (
+  <StTextarea
+    placeholder="Project name"
+    label="Name"
+    onChange={action('input')}
+    validate
+    required
+  />
+))
+
+stories.addWithInfo('with error and custom error Message', () => (
+  <StTextarea
+    placeholder="Project name"
+    label="Name"
+    onChange={action('input')}
+    error
+    errorMessage="This field is required"
+  />
 ))

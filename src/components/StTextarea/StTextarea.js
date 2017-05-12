@@ -10,8 +10,8 @@ class StTextarea extends Component {
 
     this.state = {
       focus: props.focus,
-      value: props.children,
-      error: props.error
+      error: props.error,
+      value: props.value
     }
   }
 
@@ -69,19 +69,26 @@ class StTextarea extends Component {
       this.checkValidation()
     }
 
-    this.props.onChange(event.target.value)
+    this.setState(
+      {
+        value: event.target.value
+      },
+      () => {
+        this.props.onChange(this.state.value)
+      }
+    )
   }
 
   render() {
     let classContainer = classNames({
       'sth-textarea-container': true,
       disabled: this.props.disabled,
-      error: this.props.error
+      error: this.state.error
     })
 
     let classLabel = classNames({
       'sth-textarea-title': true,
-      error: this.props.error,
+      error: this.state.error,
       active: this.state.focus,
       disabled: this.props.disabled
     })
@@ -93,25 +100,28 @@ class StTextarea extends Component {
 
     let styleBar = classNames({
       'st-textarea-bar': true,
-      'st-textarea-error-bar': this.props.error,
-      'st-textarea-normal-bar': !this.props.error
+      'st-textarea-error-bar': this.state.error,
+      'st-textarea-normal-bar': !this.state.error
     })
 
     let classBar = classNames({
-      'sth-textarea-error-bar': this.props.error,
-      'sth-textarea-normal-bar': !this.props.error
+      'sth-textarea-error-bar': this.state.error,
+      'sth-textarea-normal-bar': !this.state.error
     })
 
     return (
       <div styleName="st-textarea" className="sth-textarea">
         <div styleName="st-textarea-container" className={classContainer}>
-          <label
-            styleName="st-textarea-title"
-            className={classLabel}
-            htmlFor={this.props.name}
-          >
-            {this.props.label}
-          </label>
+          {this.props.label
+            ? <label
+                styleName="st-textarea-title"
+                className={classLabel}
+                htmlFor={this.props.name}
+              >
+                {this.props.label}
+              </label>
+            : false}
+
           <textarea
             ref={textarea => this.textarea = textarea}
             onFocus={this.onFocusHandler.bind(this)}
@@ -129,9 +139,9 @@ class StTextarea extends Component {
             maxLength={this.props.maxLength}
             minLength={this.props.minLength}
             id={this.props.qaTag}
-          >
-            {this.state.value}
-          </textarea>
+            required={this.props.required}
+            defaultValue={this.state.value}
+          />
           <span className={classBar} styleName={styleBar} />
         </div>
         {this.state.error
@@ -163,7 +173,9 @@ StTextarea.propTypes = {
   errorMessage: propTypes.string,
   disabled: propTypes.bool,
   readOnly: propTypes.bool,
-  label: propTypes.string
+  label: propTypes.string,
+  required: propTypes.bool,
+  value: propTypes.node
 }
 
 StTextarea.defaultProps = {
