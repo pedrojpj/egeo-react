@@ -14,6 +14,7 @@ import StTooltip from './StTooltip/StTooltip'
 import StRadio from './StRadio/StRadio'
 import StRadioGroup from './StRadio/StRadioGroup'
 import StCheckbox from './StCheckbox/StCheckbox'
+import StTextarea from './StTextarea/StTextarea'
 
 export {
   StButton,
@@ -31,5 +32,6 @@ export {
   StTooltip,
   StRadio,
   StRadioGroup,
-  StCheckbox
+  StCheckbox,
+  StTextarea
 }

@@ -17,7 +17,8 @@ import {
   StTooltip,
   StRadio,
   StRadioGroup,
-  StCheckbox
+  StCheckbox,
+  StTextarea
 } from './Egeo'
 
 const AppComponent = props => (
@@ -164,6 +165,19 @@ class App extends Component {
 
           <AppComponent>
             <StCheckbox value="1" checked>Option 1</StCheckbox>
+          </AppComponent>
+
+          <AppComponent>
+
+            <StTextarea
+              placeholder="Project name"
+              label="Name"
+              errorMessage="This field is error"
+              validate
+              value="Prueba prueba"
+              maxLength={5}
+            />
+
           </AppComponent>
 
         </div>
