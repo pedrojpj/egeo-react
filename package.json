@@ -19,11 +19,11 @@
     "verifyRelease": "semantic-release-tamia/verifyRelease"
   },
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "^3.4.0",
-    "@kadira/storybook": "^2.21.0",
-    "@kadira/storybook-addon-knobs": "^1.7.1",
-    "@kadira/storybook-addon-options": "^1.0.2",
-    "@kadira/storybook-deployer": "^1.2.0",
+    "@kadira/react-storybook-addon-info": "3.4.0",
+    "@kadira/storybook": "2.35.3",
+    "@kadira/storybook-addon-knobs": "1.7.1",
+    "@kadira/storybook-addon-options": "1.0.2",
+    "@kadira/storybook-deployer": "1.2.0",
     "@stratio/egeo-ui-base": "^1.3.0",
     "autoprefixer": "6.7.2",
     "babel-core": "6.22.1",
