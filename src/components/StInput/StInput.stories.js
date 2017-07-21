@@ -1,11 +1,6 @@
 import React from 'react';
-import { storiesOf, action } from '@kadira/storybook';
-import {
-  withKnobs,
-  text,
-  boolean,
-  number
-} from '@kadira/storybook-addon-knobs';
+import { storiesOf, action } from '@storybook/react';
+import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import { StInput } from 'egeo-react';
 
@@ -13,26 +8,26 @@ const stories = storiesOf('StInput', module);
 
 stories.addDecorator(withKnobs);
 
-stories.addWithInfo('default', () => (
+stories.addWithInfo('default', () =>
   <StInput placeholder="Project name" label="Name" onChange={action('input')} />
-));
-stories.add('with value change', () => (
+);
+stories.add('with value change', () =>
   <StInput
     placeholder="Project name"
     label="Name"
     onChange={action('input')}
     value={text('value', 'egeo')}
   />
-));
-stories.addWithInfo('with error', () => (
+);
+stories.addWithInfo('with error', () =>
   <StInput
     placeholder="Project name"
     label="Name"
     onChange={action('input')}
     error
   />
-));
-stories.addWithInfo('with error and custom error Message', () => (
+);
+stories.addWithInfo('with error and custom error Message', () =>
   <StInput
     placeholder="Project name"
     label="Name"
@@ -40,8 +35,8 @@ stories.addWithInfo('with error and custom error Message', () => (
     error
     errorMessage="This field is required"
   />
-));
-stories.addWithInfo('with validation required', () => (
+);
+stories.addWithInfo('with validation required', () =>
   <StInput
     placeholder="Project name"
     label="Name"
@@ -49,8 +44,8 @@ stories.addWithInfo('with validation required', () => (
     validate
     required
   />
-));
-stories.addWithInfo('with validation custom', () => (
+);
+stories.addWithInfo('with validation custom', () =>
   <StInput
     placeholder="Project name"
     label="Name"
@@ -61,16 +56,16 @@ stories.addWithInfo('with validation custom', () => (
     maxLength={number('maxLength', 40)}
     pattern={text('pattern', '')}
   />
-));
-stories.addWithInfo('disabled', () => (
+);
+stories.addWithInfo('disabled', () =>
   <StInput
     placeholder="Project name"
     label="Name"
     onChange={action('input')}
     disabled
   />
-));
-stories.addWithInfo('readonly', () => (
+);
+stories.addWithInfo('readonly', () =>
   <StInput
     placeholder="Project name"
     label="Name"
@@ -78,4 +73,4 @@ stories.addWithInfo('readonly', () => (
     value="Egeo"
     readOnly
   />
-));
+);

@@ -1,16 +1,19 @@
-import { configure, setAddon, addDecorator } from '@kadira/storybook'
-import { setOptions } from '@kadira/storybook-addon-options'
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
 
-import infoAddon from '@kadira/react-storybook-addon-info'
-import React from 'react'
+import { configure, setAddon, addDecorator } from '@storybook/react';
+import infoAddon from '@storybook/addon-info';
+import { setOptions } from '@storybook/addon-options';
+import React from 'react';
 
-addDecorator(story => (
+addDecorator(story =>
   <div style={{ textAlign: 'center', padding: '40px 20px' }}>
     {story()}
   </div>
-))
+);
 
-setAddon(infoAddon)
+setAddon(infoAddon);
+
+const req = require.context('../src/components', true, /^\.\/.*\.stories.js$/);
 
 setOptions({
   name: 'Egeo React',
@@ -21,13 +24,11 @@ setOptions({
   showSearchBox: false,
   downPanelInRight: false,
   sortStoriesByKind: true
-})
-
-const req = require.context('../src/components', true, /^\.\/.*\.stories.js$/)
+});
 
 function loadStories() {
-  require('../stories')
-  req.keys().forEach(filename => req(filename))
+  require('../stories');
+  req.keys().forEach(filename => req(filename));
 }
 
-configure(loadStories, module)
+configure(loadStories, module);

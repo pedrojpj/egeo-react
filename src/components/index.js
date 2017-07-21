@@ -1,20 +1,20 @@
-import StButton from './StButton/StButton'
-import StFooter from './StFooter/StFooter'
-import StSpinner from './StSpinner/StSpinner'
-import StInfoBox from './StInfoBox/StInfoBox'
-import StInfoCard from './StInfoCard/StInfoCard'
-import StPagination from './StPagination/StPagination'
-import StDropdownMenu from './StDropdownMenu/StDropdownMenu'
-import StDropdown from './StDropdown/StDropdown'
-import StHorizontalTabs from './StHorizontalTabs/StHorizontalTabs'
-import StPageTitle from './StPageTitle/StPageTitle'
-import StSearch from './StSearch/StSearch'
-import StInput from './StInput/StInput'
-import StTooltip from './StTooltip/StTooltip'
-import StRadio from './StRadio/StRadio'
-import StRadioGroup from './StRadio/StRadioGroup'
-import StCheckbox from './StCheckbox/StCheckbox'
-import StTextarea from './StTextarea/StTextarea'
+import StButton from './StButton/StButton';
+import StFooter from './StFooter/StFooter';
+import StSpinner from './StSpinner/StSpinner';
+import StInfoBox from './StInfoBox/StInfoBox';
+import StInfoCard from './StInfoCard/StInfoCard';
+import StPagination from './StPagination/StPagination';
+import StDropdownMenu from './StDropdownMenu/StDropdownMenu';
+import StDropdown from './StDropdown/StDropdown';
+import StHorizontalTabs from './StHorizontalTabs/StHorizontalTabs';
+import StPageTitle from './StPageTitle/StPageTitle';
+import StSearch from './StSearch/StSearch';
+import StInput from './StInput/StInput';
+import StTooltip from './StTooltip/StTooltip';
+import StRadio from './StRadio/StRadio';
+import StRadioGroup from './StRadio/StRadioGroup';
+import StCheckbox from './StCheckbox/StCheckbox';
+import StTextarea from './StTextarea/StTextarea';
 
 export {
   StButton,
@@ -34,4 +34,4 @@ export {
   StRadioGroup,
   StCheckbox,
   StTextarea
-}
+};
