@@ -1,7 +1,7 @@
-import React from 'react'
-import { storiesOf, action, linkTo } from '@kadira/storybook'
+import React from 'react';
+import { storiesOf, action, linkTo } from '@storybook/react';
 
-import { StDropdown } from 'egeo-react'
+import { StDropdown } from 'egeo-react';
 
 let items = [
   {
@@ -16,7 +16,7 @@ let items = [
     label: 'Lorem Ipsum',
     value: 3
   }
-]
+];
 
 let itemsWithIcon = [
   {
@@ -39,44 +39,44 @@ let itemsWithIcon = [
     icon: 'icon-copy',
     value: 'delete'
   }
-]
+];
 
 storiesOf('StDropdown', module)
-  .addWithInfo('default with items and button', () => (
+  .addWithInfo('default with items and button', () =>
     <StDropdown
       onChange={action('select item')}
       items={items}
       button="Select one item"
     />
-  ))
-  .addWithInfo('with custom width', () => (
+  )
+  .addWithInfo('with custom width', () =>
     <StDropdown
       onChange={action('select item')}
       width={500}
       items={items}
       button="Select one item"
     />
-  ))
-  .addWithInfo('with value check as default', () => (
+  )
+  .addWithInfo('with value check as default', () =>
     <StDropdown
       onChange={action('select item')}
       items={items}
       button="Choose one option of menu"
       default
     />
-  ))
-  .addWithInfo('mark as disabled', () => (
+  )
+  .addWithInfo('mark as disabled', () =>
     <StDropdown
       onChange={action('select item')}
       items={items}
       disabled
       button="Select one item"
     />
-  ))
-  .addWithInfo('with items with icons', () => (
+  )
+  .addWithInfo('with items with icons', () =>
     <StDropdown
       onChange={action('select item')}
       items={itemsWithIcon}
       button="Select one item"
     />
-  ))
+  );

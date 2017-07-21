@@ -1,3 +1,6 @@
-import '@kadira/storybook/addons'
-import '@kadira/storybook-addon-options/register'
-import '@kadira/storybook-addon-knobs/register'
+/* eslint-disable import/no-extraneous-dependencies, import/no-unresolved, import/extensions */
+
+import '@storybook/addon-actions/register';
+import '@storybook/addon-links/register';
+import '@storybook/addon-knobs/register';
+import '@storybook/addon-options/register';
