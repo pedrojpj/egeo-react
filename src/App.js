@@ -18,7 +18,9 @@ import {
   StRadio,
   StRadioGroup,
   StCheckbox,
-  StTextarea
+  StTextarea,
+  StList,
+  StListItem
 } from './Egeo';
 
 const AppComponent = props =>
@@ -52,7 +54,12 @@ class App extends Component {
           label: 'Lorem Ipsum',
           value: 3
         }
-      ]
+      ],
+      options: {
+        search: {
+          enabled: true
+        }
+      }
     };
   }
 
@@ -158,6 +165,15 @@ class App extends Component {
               value="Prueba prueba"
               maxLength={5}
             />
+          </AppComponent>
+
+          <AppComponent>
+            <StList title="Example" options={this.state.options}>
+              <StListItem icon="icon-alert" selected={true}>
+                Item 1
+              </StListItem>
+              <StListItem>Item 1</StListItem>
+            </StList>
           </AppComponent>
         </div>
         <StFooter
