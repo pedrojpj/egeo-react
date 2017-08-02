@@ -33,34 +33,53 @@ class App extends Component {
     super(props);
 
     this.state = {
-      links: [
-        {
-          title: 'Home'
-        },
-        {
-          title: 'Contact'
-        }
+      listOriginal: [
+        { icon: 'icon-alert', text: 'Item 1', selected: true },
+        { icon: 'icon-alert', text: 'Item 2', selected: false },
+        { icon: 'icon-alert', text: 'Name 2', selected: false }
       ],
+      list: [
+        { icon: 'icon-alert', text: 'Item 1', selected: true },
+        { icon: 'icon-alert', text: 'Item 2', selected: false },
+        { icon: 'icon-alert', text: 'Name 2', selected: false }
+      ],
+      links: [{ title: 'Home' }, { title: 'Contact' }],
       items: [
-        {
-          label: 'Critical Error',
-          value: 1
-        },
-        {
-          label: 'Warning',
-          value: 2
-        },
-        {
-          label: 'Lorem Ipsum',
-          value: 3
-        }
+        { label: 'Critical Error', value: 1 },
+        { label: 'Warning', value: 2 },
+        { label: 'Lorem Ipsum', value: 3 }
       ],
-      options: {
-        search: {
-          enabled: true
-        }
-      }
+      options: { search: { enabled: true, placeholder: 'Enter your search' } }
     };
+  }
+
+  onSearch(value) {
+    console.log(value);
+    if (!value) {
+      this.setState({
+        list: this.state.listOriginal
+      });
+    } else {
+      this.setState({
+        list: this.state.list.filter(item => {
+          if (item.text.includes(value)) {
+            return item;
+          }
+        })
+      });
+    }
+  }
+
+  clickItemList(index) {
+    this.setState({
+      list: this.state.list.map((item, i) => {
+        if (index === i) {
+          return Object.assign({}, item, { selected: true });
+        } else {
+          return Object.assign({}, item, { selected: false });
+        }
+      })
+    });
   }
 
   render() {
@@ -132,7 +151,11 @@ class App extends Component {
 
           <AppComponent>
             <div
-              style={{ textAlign: 'center', width: '100%', height: '100px' }}
+              style={{
+                textAlign: 'center',
+                width: '100%',
+                height: '100px'
+              }}
             >
               <StTooltip text="example" placement="bottom">
                 <p style={{ display: 'inline' }}>example</p>
@@ -168,11 +191,21 @@ class App extends Component {
           </AppComponent>
 
           <AppComponent>
-            <StList title="Example" options={this.state.options}>
-              <StListItem icon="icon-alert" selected={true}>
-                Item 1
-              </StListItem>
-              <StListItem>Item 1</StListItem>
+            <StList
+              title="Example"
+              options={this.state.options}
+              onSearch={value => this.onSearch(value)}
+            >
+              {this.state.list.map((item, i) =>
+                <StListItem
+                  icon={item.icon}
+                  key={i}
+                  selected={item.selected}
+                  onClick={() => this.clickItemList(i)}
+                >
+                  {item.text}
+                </StListItem>
+              )}
             </StList>
           </AppComponent>
         </div>

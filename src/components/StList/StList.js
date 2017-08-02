@@ -14,7 +14,11 @@ class StListItem extends Component {
     });
 
     return (
-      <li className={itemClass} styleName="item">
+      <li
+        className={itemClass}
+        styleName={'item ' + this.props.align}
+        onClick={this.props.onClick}
+      >
         {this.props.icon && this.props.align === 'left'
           ? <i styleName="icon left" className={this.props.icon} />
           : false}
@@ -30,7 +34,8 @@ class StListItem extends Component {
 StListItem.propTypes = {
   icon: propTypes.string,
   align: propTypes.oneOf(['left', 'right']),
-  selected: propTypes.bool
+  selected: propTypes.bool,
+  onClick: propTypes.func
 };
 
 StListItem.defaultProps = {
@@ -38,10 +43,6 @@ StListItem.defaultProps = {
 };
 
 class StList extends Component {
-  onSearch(search) {
-    this.props.onSearch(search);
-  }
-
   render() {
     return (
       <section className="sth-item-list" styleName="list">
@@ -55,7 +56,7 @@ class StList extends Component {
           ? <div styleName="search">
               <StSearch
                 placeholder={this.props.options.search.placeholder}
-                onSearch={this.onSearch}
+                onSearch={value => this.props.onSearch(value)}
               />
             </div>
           : false}
@@ -96,8 +97,7 @@ StList.defaultProps = {
     search: {
       enabled: false
     }
-  },
-  onSearch: () => {}
+  }
 };
 
 export { StList, StListItem };
