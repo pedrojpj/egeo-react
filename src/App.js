@@ -53,23 +53,6 @@ class App extends Component {
     };
   }
 
-  onSearch(value) {
-    console.log(value);
-    if (!value) {
-      this.setState({
-        list: this.state.listOriginal
-      });
-    } else {
-      this.setState({
-        list: this.state.list.filter(item => {
-          if (item.text.includes(value)) {
-            return item;
-          }
-        })
-      });
-    }
-  }
-
   clickItemList(index) {
     this.setState({
       list: this.state.list.map((item, i) => {
@@ -191,11 +174,7 @@ class App extends Component {
           </AppComponent>
 
           <AppComponent>
-            <StList
-              title="Example"
-              options={this.state.options}
-              onSearch={value => this.onSearch(value)}
-            >
+            <StList title="Example" options={this.state.options}>
               {this.state.list.map((item, i) =>
                 <StListItem
                   icon={item.icon}
