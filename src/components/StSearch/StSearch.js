@@ -1,50 +1,52 @@
-import React, { Component } from 'react'
-import { func, bool, string, number } from 'prop-types'
+import React, { Component } from 'react';
+import { func, bool, string, number } from 'prop-types';
 
-import './StSearch.scss'
+import './StSearch.scss';
 
 class StSearch extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       focus: false
-    }
+    };
   }
 
   onFocus() {
     this.setState({
       focus: true
-    })
+    });
   }
 
   onBlur() {
     this.setState({
       focus: false
-    })
+    });
   }
 
   clearInput() {
-    this.searchBox.value = ''
+    this.searchBox.value = '';
     this.setState({
       focus: false
-    })
+    });
+
+    this.props.onSearch(this.searchBox.value);
   }
 
   onKeyPress(event) {
-    let key = event.keyCode || event.which
+    let key = event.keyCode || event.which;
     if (key === 13) {
-      this.launchSearch(true)
+      this.launchSearch(true);
     }
 
     if (!this.props.searchOnlyOnClick && this.props.liveSearch) {
-      this.launchSearch(true, false)
+      this.launchSearch(true, false);
     }
   }
 
   launchSearch(force = false, isFromButton = false) {
     if (this.searchBox.value.length >= this.props.minLength) {
-      this.props.onSearch(this.searchBox.value)
+      this.props.onSearch(this.searchBox.value);
     }
   }
 
@@ -54,11 +56,13 @@ class StSearch extends Component {
         <input
           id={this.props.qaTag}
           placeholder={this.props.placeholder}
-          onKeyPress={this.onKeyPress.bind(this)}
+          onChange={event => {
+            this.props.onSearch(event.target.value);
+          }}
           onFocus={this.onFocus.bind(this)}
           onBlur={this.onBlur.bind(this)}
           ref={input => {
-            this.searchBox = input
+            this.searchBox = input;
           }}
           value={this.props.value}
           styleName="st-search-input"
@@ -81,10 +85,9 @@ class StSearch extends Component {
                     tabIndex="0"
                   />
                 : false}
-
             </div>}
       </div>
-    )
+    );
   }
 }
 
@@ -97,7 +100,7 @@ StSearch.propTypes = {
   minLength: number,
   hasClearButton: bool,
   liveSearch: bool
-}
+};
 
 StSearch.defaultProps = {
   onSearch: () => {},
@@ -105,8 +108,8 @@ StSearch.defaultProps = {
   debounce: 0,
   minLength: 0,
   qaTag: 'search',
-  hasClearButton: false,
+  hasClearButton: true,
   liveSearch: true
-}
+};
 
-export default StSearch
+export default StSearch;
