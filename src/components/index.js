@@ -17,6 +17,7 @@ import StCheckbox from './StCheckbox/StCheckbox';
 import StTextarea from './StTextarea/StTextarea';
 import { StList, StListItem } from './StList/StList';
 import StTip from './StTip/StTip';
+import StHelp from './StHelp/StHelp';
 
 export {
   StButton,
@@ -38,5 +39,6 @@ export {
   StTextarea,
   StList,
   StListItem,
-  StTip
+  StTip,
+  StHelp
 };
