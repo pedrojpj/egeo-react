@@ -20,7 +20,8 @@ import {
   StCheckbox,
   StTextarea,
   StList,
-  StListItem
+  StListItem,
+  StTip
 } from './Egeo';
 
 const AppComponent = props =>
@@ -186,6 +187,10 @@ class App extends Component {
                 </StListItem>
               )}
             </StList>
+          </AppComponent>
+
+          <AppComponent>
+            <StTip>Help</StTip>
           </AppComponent>
         </div>
         <StFooter

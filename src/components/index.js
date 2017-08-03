@@ -16,6 +16,7 @@ import StRadioGroup from './StRadio/StRadioGroup';
 import StCheckbox from './StCheckbox/StCheckbox';
 import StTextarea from './StTextarea/StTextarea';
 import { StList, StListItem } from './StList/StList';
+import StTip from './StTip/StTip';
 
 export {
   StButton,
@@ -36,5 +37,6 @@ export {
   StCheckbox,
   StTextarea,
   StList,
-  StListItem
+  StListItem,
+  StTip
 };
