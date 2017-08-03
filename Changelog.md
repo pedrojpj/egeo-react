@@ -1,3 +1,3 @@
 ## New features
 
-### Add St-List Component
+### Add St-Help Component

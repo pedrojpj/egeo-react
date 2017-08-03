@@ -1,0 +1,22 @@
+.st-help {
+  padding: 20px;
+  text-align: left;
+
+  &.vertical {
+    display: grid;
+  }
+
+  &.horizontal {
+    display: flex;
+  }
+
+  p {
+    &.vertical {
+      margin-top: 20px;
+    }
+
+    &.horizontal {
+      margin-left: 13px;
+    }
+  }
+}

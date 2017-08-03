@@ -21,7 +21,8 @@ import {
   StTextarea,
   StList,
   StListItem,
-  StTip
+  StTip,
+  StHelp
 } from './Egeo';
 
 const AppComponent = props =>
@@ -191,6 +192,10 @@ class App extends Component {
 
           <AppComponent>
             <StTip>Help</StTip>
+          </AppComponent>
+
+          <AppComponent>
+            <StHelp>Help</StHelp>
           </AppComponent>
         </div>
         <StFooter
