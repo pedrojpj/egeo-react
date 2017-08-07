@@ -1,22 +1,15 @@
-import React, { Component } from 'react'
-import { string, bool } from 'prop-types'
-import './StSpinner.scss'
+import React from 'react';
+import propTypes from 'prop-types';
+import './StSpinner.scss';
 
-class StSpinner extends Component {
-  render() {
-    return (
-      <div styleName="st-spinner">
-        {this.props.loading
-          ? <img src={this.props.imageUrl} alt="loading" />
-          : false}
-      </div>
-    )
-  }
-}
+const StSpinner = props =>
+  <div styleName="st-spinner" className="sth-spinner">
+    {props.loading ? <img src={props.image} alt="Loading" /> : false}
+  </div>;
 
 StSpinner.propTypes = {
-  imageUrl: string,
-  loading: bool
-}
+  image: propTypes.string,
+  loading: propTypes.bool
+};
 
-export default StSpinner
+export default StSpinner;
