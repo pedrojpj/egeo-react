@@ -3,7 +3,7 @@ import { storiesOf, action, linkTo } from '@storybook/react';
 
 import { StPagination } from 'egeo-react';
 
-storiesOf('StPagination', module)
+storiesOf('Pagination', module)
   .addWithInfo('default with total 200', () =>
     <StPagination onChange={action('change pagination')} total={200} />
   )

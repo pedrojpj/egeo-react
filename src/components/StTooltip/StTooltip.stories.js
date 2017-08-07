@@ -3,7 +3,7 @@ import { storiesOf, action, linkTo } from '@storybook/react';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import { StTooltip } from 'egeo-react';
 
-const stories = storiesOf('StTooltip', module);
+const stories = storiesOf('Tooltip', module);
 
 stories.addDecorator(withKnobs);
 

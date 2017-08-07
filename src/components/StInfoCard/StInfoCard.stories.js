@@ -3,7 +3,7 @@ import { storiesOf, action, linkTo } from '@storybook/react';
 
 import { StInfoCard } from 'egeo-react';
 
-storiesOf('StInfoCard', module)
+storiesOf('Info Card', module)
   .addWithInfo('default with title', () =>
     <StInfoCard title="MAIN TITLE">
       <p>You can put any content here</p>

@@ -3,7 +3,7 @@ import { storiesOf, action, linkTo } from '@storybook/react';
 
 import { StHorizontalTabs } from 'egeo-react';
 
-storiesOf('StHorizontalTabs', module)
+storiesOf('Horizontal Tabs', module)
   .addWithInfo('default with options', () =>
     <StHorizontalTabs
       onChange={action('changed')}

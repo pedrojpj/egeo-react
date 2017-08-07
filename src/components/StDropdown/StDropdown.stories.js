@@ -41,7 +41,7 @@ let itemsWithIcon = [
   }
 ];
 
-storiesOf('StDropdown', module)
+storiesOf('Dropdown', module)
   .addWithInfo('default with items and button', () =>
     <StDropdown
       onChange={action('select item')}
