@@ -6,7 +6,7 @@ const StInfoCard = props =>
   <section styleName="st-info-card" className="sth-info-card">
     {props.image
       ? <div className="sth-info-card__photo-div" styleName="image">
-          <img className="img-responsive" src={props.image} />
+          <img className="img-responsive" src={props.image} alt="" />
         </div>
       : false}
 
