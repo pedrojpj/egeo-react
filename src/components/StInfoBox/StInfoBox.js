@@ -1,29 +1,28 @@
-import React, { Component } from 'react'
-import { string } from 'prop-types'
+import React from 'react';
+import propTypes from 'prop-types';
 
-import './StInfoBox.scss'
+import './StInfoBox.scss';
 
-class StInfoBox extends Component {
-  render() {
-    return (
-      <section styleName="st-info-box">
-        <div>
-          <label>
-            {this.props.icon ? <i className={this.props.icon} /> : false}
-            {this.props.title}
-          </label>
-        </div>
-        <div>
-          {this.props.children}
-        </div>
-      </section>
-    )
-  }
-}
+const StInfoBox = props =>
+  <section className="sth-info-box" styleName="st-info-box">
+    {props.title
+      ? <h3 styleName="header" className="sth-info-box__header">
+          <span styleName="text" className="sth-info-box__header__text">
+            {props.icon
+              ? <i className={'sth-info-box__header__icon ' + props.icon} />
+              : false}
+            {props.title}
+          </span>
+        </h3>
+      : false}
+    <div styleName="content" className="sth-info-box__content">
+      {props.children}
+    </div>
+  </section>;
 
 StInfoBox.propTypes = {
-  icon: string,
-  title: string
-}
+  icon: propTypes.string,
+  title: propTypes.string
+};
 
-export default StInfoBox
+export default StInfoBox;
