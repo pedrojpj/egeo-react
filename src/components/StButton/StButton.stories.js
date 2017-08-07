@@ -3,7 +3,7 @@ import { storiesOf, action, linkTo } from '@storybook/react';
 
 import { StButton } from 'egeo-react';
 
-storiesOf('StButton', module)
+storiesOf('Button', module)
   .addWithInfo('with text', () =>
     <StButton onClick={action('clicked')}>Hello Button</StButton>
   )

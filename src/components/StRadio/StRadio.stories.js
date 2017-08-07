@@ -4,7 +4,7 @@ import { withKnobs, number } from '@storybook/addon-knobs';
 
 import { StRadio, StRadioGroup } from 'egeo-react';
 
-const stories = storiesOf('StRadio', module);
+const stories = storiesOf('Radio', module);
 
 stories.addDecorator(withKnobs);
 

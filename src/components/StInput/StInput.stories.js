@@ -4,7 +4,7 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 
 import { StInput } from 'egeo-react';
 
-const stories = storiesOf('StInput', module);
+const stories = storiesOf('Input', module);
 
 stories.addDecorator(withKnobs);
 

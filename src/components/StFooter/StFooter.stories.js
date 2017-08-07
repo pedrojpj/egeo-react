@@ -3,7 +3,7 @@ import { storiesOf, action, linkTo } from '@storybook/react';
 
 import { StFooter } from 'egeo-react';
 
-storiesOf('StFooter', module)
+storiesOf('Footer', module)
   .addWithInfo('with logo and right text', () =>
     <StFooter
       image="http://www.stratio.com/wp-content/uploads/2017/01/logo-stratio-white.png"

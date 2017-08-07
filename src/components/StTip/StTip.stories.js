@@ -3,7 +3,7 @@ import { storiesOf, action, linkTo } from '@storybook/react';
 
 import { StTip } from 'egeo-react';
 
-storiesOf('StTip', module).addWithInfo('default', () =>
+storiesOf('Tip', module).addWithInfo('default', () =>
   <StTip>
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
     ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
